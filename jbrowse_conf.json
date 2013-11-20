@@ -25,8 +25,9 @@
     // refSeqOrder: 'length descending',
 
     datasets: {
-        volvox:    { url: '?data=sample_data/json/volvox', name: 'Volvox Example' },
-        modencode: { url: '?data=sample_data/json/modencode', name: 'MODEncode Example' },
-        yeast:     { url: '?data=sample_data/json/yeast',     name: 'Yeast Example' }
+        //volvox:      { url: '?data=sample_data/json/volvox', name: 'Volvox Example' },
+        //modencode:   { url: '?data=sample_data/json/modencode', name: 'MODEncode Example' },
+        //yeast:       { url: '?data=sample_data/json/yeast', name: 'Yeast Example' },
+        arabidopsis: { url: '?data=arabidopsis', name: 'Arabidopsis TAIR10 Genome Release' }
     }
 }

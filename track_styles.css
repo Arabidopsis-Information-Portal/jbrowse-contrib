@@ -197,6 +197,10 @@ div.exon-hist {
     z-index: 10;
 }
 
+.te-exon {
+    background-color: black !important;
+}
+
 div.est-hist {
     background-color: #ED9185;
     border-color: #c33;
@@ -305,6 +309,15 @@ div.cds-hist {
     cursor: pointer;
 }
 
+.invert {
+   /* Rotate */
+   -webkit-transform: rotate(-180deg);
+   -moz-transform: rotate(-180deg);
+   -ms-transform: rotate(-180deg);
+   -o-transform: rotate(-180deg);
+   transform: rotate(-180deg);
+}
+
 .hgred {
     border-color: #f99 white #f99 white;
 }
@@ -319,6 +332,36 @@ div.hgred-hist {
 div.hgblue-hist {
     background-color: #aad;
     border-color: #99f;
+}
+
+.hggreen {
+    border-color: green white green white;
+}
+div.hggreen-hist {
+    background-color: #daa;
+    border-color: green;
+}
+
+.diamond, .plus-diamond, .minus-diamond {
+   position: absolute;
+   width: 6px !important;
+   height: 6px;
+   border: 1px solid;
+   border-color: gray;
+
+   /* Rotate */
+   -webkit-transform: rotate(-45deg);
+   -moz-transform: rotate(-45deg);
+   -ms-transform: rotate(-45deg);
+   -o-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+}
+
+.redbg {
+    background-color: red;
+}
+.yellowbg {
+    background-color: yellow;
 }
 
 .ibeam, .plus-ibeam, .minus-ibeam {

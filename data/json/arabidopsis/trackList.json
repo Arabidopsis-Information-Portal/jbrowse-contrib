@@ -10,44 +10,85 @@
       },
       {
          "style" : {
+            "className" : "feature"
+         },
+         "menuTemplate" : [
+            {
+               "action" : "iframeDialog",
+               "url" : "http://<URI_PLACEHOLDER>/thalemine/keywordSearchResults.do?searchTerm={name}",
+               "label" : "Thalemine Gene Report: {name}"
+            },
+            {
+               "action" : "iframeDialog",
+               "url" : "http://www.arabidopsis.org/servlets/TairObject?name={name}&type=locus",
+               "label" : "TAIR Locus Detail Report: {name}"
+            }
+         ],
+         "key" : "Locus",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_loci/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_loci"
+      },
+      {
+         "style" : {
             "className" : "transcript",
             "subfeatureClasses" : {
                "three_prime_UTR" : "transcript-UTR",
                "exon" : "transcript-exon",
-               "CDS" : "transcript-CDS",
-               "five_prime_UTR" : "transcript-UTR"
+               "five_prime_UTR" : "transcript-UTR",
+               "CDS" : "transcript-CDS"
             }
+         },
+         "menuTemplate" : [
+            {
+               "action" : "contentDialog",
+               "content" : "<table border=1><tr><td>Identifier</td><td>{name}</td></tr><tr><td>Name</td><td>{note}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "title" : "Gene Info: {name}",
+               "label" : "Gene Info: {name}"
+            },
+            {
+               "iconClass" : "dijitIconDatabase",
+               "action" : "iframeDialog",
+               "url" : "http://<URI_PLACEHOLDER>/thalemine/keywordSearchResults.do?searchTerm={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
+            },
+            {
+               "iconClass" : "dijitIconDatabase",
+               "action" : "iframeDialog",
+               "url" : "http://www.arabidopsis.org/servlets/TairObject?name={name}&type=gene",
+               "title" : "TAIR Gene Model Detail Report: {name}",
+               "label" : "TAIR Gene Model Detail Report: {name}"
+            }
+         ],
+         "hooks" : {
+            "modify" : "function( track, feature, div ) { var Note = feature.get('Note'); if(Note === 'transposable element gene') { dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.className = child.className + ' te-exon'; }); } }"
          },
          "key" : "Protein Coding Gene Models",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_genes/{refseq}/trackData.json",
          "compress" : 0,
-         "type" : "FeatureTrack",
-         "label" : "TAIR10_genes"
+         "label" : "TAIR10_genes",
+         "type" : "FeatureTrack"
       },
       {
          "style" : {
             "className" : "generic_parent",
             "subfeatureClasses" : {
-               "pseduogenic_exon" : "exon"
+               "transposon_fragment" : "feature3"
             }
          },
-         "key" : "Pseudogenes",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : null,
-         "urlTemplate" : "tracks/TAIR10_pseudogenes/{refseq}/trackData.json",
-         "compress" : 0,
-         "type" : "FeatureTrack",
-         "label" : "TAIR10_pseudogenes"
-      },
-      {
-         "style" : {
-            "className" : "generic_parent",
-            "subfeatureClasses" : {
-               "transposon_fragment" : "match_part"
+         "menuTemplate" : [
+            {
+               "action" : "iframeDialog",
+               "url" : "http://www.arabidopsis.org/servlets/TairObject?name={name}&type=transposon",
+               "label" : "TAIR Transposon Detail Report"
             }
-         },
+         ],
          "key" : "Natural Transposons",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
@@ -58,22 +99,10 @@
       },
       {
          "style" : {
-            "className" : "generic_parent",
-            "subfeatureClasses" : {
-               "exon" : "match_part"
-            }
-         },
-         "key" : "ncRNAs",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : null,
-         "urlTemplate" : "tracks/TAIR10_ncRNAs/{refseq}/trackData.json",
-         "compress" : 0,
-         "type" : "FeatureTrack",
-         "label" : "TAIR10_ncRNAs"
-      },
-      {
-         "style" : {
             "className" : "exon"
+         },
+         "hooks" : {
+            "modify" : "function( track, feature, div ) { var Note = feature.get('Note'); if(Note.match(/E3|X2|X3|S2|S3/)) { bgcolor = 'pink'; } else if (Note.match(/E4|X4/)) { bgcolor = 'hotpink'; } else if(Note.match(/E5/)) { bgcolor = 'red'; } else if(Note.match(/E7|X5|S4/)) { bgcolor = 'darkred'; } div.style.backgroundColor = bgcolor; }"
          },
          "key" : "Unconfirmed Exons",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -85,65 +114,37 @@
       },
       {
          "style" : {
-            "className" : "feature3",
-            "featureCss" : "background-color: #623;"
+            "className" : "generic_parent",
+            "subfeatureClasses" : {
+               "pseduogenic_exon" : "exon"
+            }
          },
-         "key" : "Tandem Repeats",
+         "menuTemplate" : [
+            {
+               "iconClass" : "dijitIconDatabase",
+               "action" : "iframeDialog",
+               "url" : "http://<URI_PLACEHOLDER>/thalemine/keywordSearchResults.do?searchTerm={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
+            },
+            {
+               "iconClass" : "dijitIconDatabase",
+               "action" : "iframeDialog",
+               "url" : "http://www.arabidopsis.org/servlets/TairObject?name={name}&type=gene",
+               "title" : "TAIR Gene Model Detail Report: {name}",
+               "label" : "TAIR Gene Model Detail Report: {name}"
+            }
+         ],
+         "hooks" : {
+            "modify" : "function( track, feature, div ) { dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = 'turquoise'; }); }"
+         },
+         "key" : "Pseudogenes",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
-         "urlTemplate" : "tracks/TAIR_SSRs/{refseq}/trackData.json",
+         "urlTemplate" : "tracks/TAIR10_pseudogenes/{refseq}/trackData.json",
          "compress" : 0,
-         "type" : "FeatureTrack",
-         "label" : "TAIR_SSRs"
-      },
-      {
-         "style" : {
-            "className" : "diamond dmyellow"
-         },
-         "key" : "Polymorphisms",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : null,
-         "urlTemplate" : "tracks/TAIR9_polymorphisms/{refseq}/trackData.json",
-         "compress" : 0,
-         "type" : "FeatureTrack",
-         "label" : "TAIR9_polymorphisms"
-      },
-      {
-         "style" : {
-            "className" : "feature5"
-         },
-         "key" : "Tiling Path",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : null,
-         "urlTemplate" : "tracks/TAIR9_assemblies/{refseq}/trackData.json",
-         "compress" : 0,
-         "type" : "FeatureTrack",
-         "label" : "TAIR9_assemblies"
-      },
-      {
-         "style" : {
-            "className" : "feature5",
-            "featureCss" : "background-color: red;"
-         },
-         "key" : "Gaps",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : null,
-         "urlTemplate" : "tracks/TAIR9_assembly_gaps/{refseq}/trackData.json",
-         "compress" : 0,
-         "type" : "FeatureTrack",
-         "label" : "TAIR9_assembly_gaps"
-      },
-      {
-         "style" : {
-            "className" : "feature3"
-         },
-         "key" : "Assembly Updates",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : null,
-         "urlTemplate" : "tracks/TAIR9_assembly_updates/{refseq}/trackData.json",
-         "compress" : 0,
-         "type" : "FeatureTrack",
-         "label" : "TAIR9_assembly_updates"
+         "label" : "TAIR10_pseudogenes",
+         "type" : "FeatureTrack"
       },
       {
          "style" : {
@@ -174,8 +175,100 @@
       },
       {
          "style" : {
-            "className" : "triangle hgred invert"
+            "className" : "generic_parent",
+            "subfeatureClasses" : {
+               "exon" : "feature2"
+            }
          },
+         "key" : "ncRNAs",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_ncRNAs/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_ncRNAs"
+      },
+      {
+         "style" : {
+            "className" : "feature3",
+            "featureCss" : "background-color: #623;",
+            "label" : "function(feature) { return feature.get('Name'); }",
+            "description" : "function(feature) { return feature.get('Unit') + ' Length: ' + feature.get('Length') + '; Unit Size: ' + feature.get('Period') + '; Copy number: ' + feature.get('Copy'); }"
+         },
+         "key" : "Tandem Repeats",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR_SSRs/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR_SSRs"
+      },
+      {
+         "style" : {
+            "className" : "feature5",
+            "arrowheadClass" : "transcript-arrowhead"
+         },
+         "menuTemplate" : [
+            {
+               "action" : "iframeDialog",
+               "url" : "http://www.arabidopsis.org/servlets/TairObject?name={name}&type=assembly_unit",
+               "label" : "TAIR Assembly Unit Report"
+            }
+         ],
+         "key" : "Tiling Path",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_assemblies/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "category" : "Assembly",
+         "label" : "TAIR9_assemblies"
+      },
+      {
+         "style" : {
+            "className" : "feature5",
+            "showLabels" : false,
+            "arrowheadClass" : null
+         },
+         "key" : "Gaps",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_assembly_gaps/{refseq}/trackData.json",
+         "compress" : 0,
+         "category" : "Assembly",
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_assembly_gaps"
+      },
+      {
+         "style" : {
+            "className" : "diamond yellowbg",
+            "arrowheadClass" : null,
+            "label" : null,
+            "description" : "function(feature) { return feature.get('Note'); }"
+         },
+         "hooks" : {
+            "modify" : "function( track, feature, div ) { if(feature.get('Type') !== 'possible_base_call_error') { div.className = 'feature2'; div.style.backgroundColor = 'orange'; } }"
+         },
+         "key" : "Assembly Updates",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_assembly_updates/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_assembly_updates"
+      },
+      {
+         "style" : {
+            "className" : "triangle hgred invert",
+            "_defaultLabelScale" : 500
+         },
+         "menuTemplate" : [
+            {
+               "action" : "iframeDialog",
+               "url" : "http://www.arabidopsis.org/servlets/TairObject?name={name}&type=polyallele",
+               "label" : "TAIR Polymorphism Report"
+            }
+         ],
          "key" : "T-DNAs/Transposons",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
@@ -183,6 +276,18 @@
          "compress" : 0,
          "type" : "FeatureTrack",
          "label" : "TAIR9_tDNAs"
+      },
+      {
+         "style" : {
+            "className" : "diamond yellowbg"
+         },
+         "key" : "Polymorphisms",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_polymorphisms/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_polymorphisms"
       },
       {
          "style" : {

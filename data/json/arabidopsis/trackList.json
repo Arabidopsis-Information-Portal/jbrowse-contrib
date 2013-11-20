@@ -1,0 +1,243 @@
+{
+   "tracks" : [
+      {
+         "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "chunkSize" : 20000,
+         "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
+         "label" : "TAIR10_genome",
+         "type" : "SequenceTrack",
+         "key" : "Reference Sequence"
+      },
+      {
+         "style" : {
+            "className" : "transcript",
+            "subfeatureClasses" : {
+               "three_prime_UTR" : "transcript-UTR",
+               "exon" : "transcript-exon",
+               "CDS" : "transcript-CDS",
+               "five_prime_UTR" : "transcript-UTR"
+            }
+         },
+         "key" : "Protein Coding Gene Models",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_genes/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_genes"
+      },
+      {
+         "style" : {
+            "className" : "generic_parent",
+            "subfeatureClasses" : {
+               "pseduogenic_exon" : "exon"
+            }
+         },
+         "key" : "Pseudogenes",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_pseudogenes/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_pseudogenes"
+      },
+      {
+         "style" : {
+            "className" : "generic_parent",
+            "subfeatureClasses" : {
+               "transposon_fragment" : "match_part"
+            }
+         },
+         "key" : "Natural Transposons",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_transposons/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_transposons"
+      },
+      {
+         "style" : {
+            "className" : "generic_parent",
+            "subfeatureClasses" : {
+               "exon" : "match_part"
+            }
+         },
+         "key" : "ncRNAs",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_ncRNAs/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_ncRNAs"
+      },
+      {
+         "style" : {
+            "className" : "exon"
+         },
+         "key" : "Unconfirmed Exons",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_unconfirmed_exons/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_unconfirmed_exons"
+      },
+      {
+         "style" : {
+            "className" : "feature3",
+            "featureCss" : "background-color: #623;"
+         },
+         "key" : "Tandem Repeats",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR_SSRs/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR_SSRs"
+      },
+      {
+         "style" : {
+            "className" : "diamond dmyellow"
+         },
+         "key" : "Polymorphisms",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_polymorphisms/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_polymorphisms"
+      },
+      {
+         "style" : {
+            "className" : "feature5"
+         },
+         "key" : "Tiling Path",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_assemblies/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_assemblies"
+      },
+      {
+         "style" : {
+            "className" : "feature5",
+            "featureCss" : "background-color: red;"
+         },
+         "key" : "Gaps",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_assembly_gaps/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_assembly_gaps"
+      },
+      {
+         "style" : {
+            "className" : "feature3"
+         },
+         "key" : "Assembly Updates",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_assembly_updates/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_assembly_updates"
+      },
+      {
+         "style" : {
+            "className" : "exon"
+         },
+         "key" : "Spliced Junctions",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_Spliced_Junctions_clustered/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_Spliced_Junctions_clustered"
+      },
+      {
+         "style" : {
+            "className" : "generic_parent",
+            "subfeatureClasses" : {
+               "transposon_fragment" : "match_part"
+            }
+         },
+         "key" : "Quesneville et al. Natural Transposons",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_Quesneville_Transposons/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_Quesneville_Transposons"
+      },
+      {
+         "style" : {
+            "className" : "triangle hgred invert"
+         },
+         "key" : "T-DNAs/Transposons",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_tDNAs/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_tDNAs"
+      },
+      {
+         "style" : {
+            "className" : "generic_part_a"
+         },
+         "key" : "Markers",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_markers/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_markers"
+      },
+      {
+         "style" : {
+            "className" : "generic_part_a"
+         },
+         "key" : "Microarray ATH1-121501 probes",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_Microarray_probes/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_Microarray_probes"
+      },
+      {
+         "style" : {
+            "className" : "generic_parent",
+            "subfeatureClasses" : {
+               "match_part" : "match_part"
+            }
+         },
+         "key" : "AtProteome (Baerenfaller et al. 2008)",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_AtProteome/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_AtProteome"
+      },
+      {
+         "style" : {
+            "className" : "generic_parent",
+            "subfeatureClasses" : {
+               "match_part" : "match_part"
+            }
+         },
+         "key" : "AtProteome (Briggs et al.)",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR9_Briggs_AtProteome/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_Briggs_AtProteome"
+      }
+   ],
+   "formatVersion" : 1
+}

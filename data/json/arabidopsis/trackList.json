@@ -166,7 +166,7 @@
             "className" : "exon"
          },
          "hooks" : {
-            "modify" : "function( track, feature, div ) { if(feature.get('Type') !== 'possible_base_call_error') { div.className = 'feature2'; div.style.backgroundColor = 'orange'; } }"
+            "modify" : "function( track, feature, div ) { if(feature.get('Note') == 1) { bg = 'silver'; } else { var overlap = feature.get('Overlap'); if (overlap.match(/agi/)) { bg = 'steelblue'; } else if (overlap.match(/blist/)) { bg = 'orange'; } else if (overlap.match(/distinct/)) { bg = 'pink'; } else if (overlap.match(/outside/)) { bg = 'red'; } } div.style.backgroundColor = bg; }"
          },
          "key" : "Spliced Junctions",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -271,7 +271,7 @@
             "description" : "function(feature) { return feature.get('Note'); }"
          },
          "hooks" : {
-            "modify" : "function( track, feature, div ) { if(feature.get('Note') == 1) { bg = 'silver'; } else { var overlap = feature.get('Overlap'); if (overlap.match(/agi/)) { bg = 'steelblue'; } else if (overlap.match(/blist/)) { bg = 'orange'; } else if (overlap.match(/distinct/)) { bg = 'pink'; } else if (overlap.match(/outside/)) { bg = 'red'; } } div.style.backgroundColor = bg; }"
+            "modify" : "function( track, feature, div ) { if(feature.get('Type') !== 'possible_base_call_error') { div.className = 'feature2'; div.style.backgroundColor = 'orange'; } }"
          },
          "key" : "Assembly Updates",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",

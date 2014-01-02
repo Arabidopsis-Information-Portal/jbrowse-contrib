@@ -342,6 +342,14 @@ div.hggreen-hist {
     border-color: green;
 }
 
+.box, .plus-box, .minus-box {
+   position: absolute;
+   width: 6px !important;
+   height: 6px;
+   border: 1px solid;
+   border-color: gray;
+}
+
 .diamond, .plus-diamond, .minus-diamond {
    position: absolute;
    width: 6px !important;

@@ -115,14 +115,13 @@
          "metadata" : {
              "description" : "Predicted Transposable elements. Incorporates TE annotation from TAIR and a variety of external sources including TIGR and the Quesneville group (see Quesneville track description for methodology)."
          }
-
       },
       {
          "style" : {
             "className" : "exon"
          },
          "hooks" : {
-            "modify" : "function( track, feature, div ) { var Note = feature.get('Note'); if(Note.match(/E3|X2|X3|S2|S3/)) { bgcolor = 'pink'; } else if (Note.match(/E4|X4/)) { bgcolor = 'hotpink'; } else if(Note.match(/E5/)) { bgcolor = 'red'; } else if(Note.match(/E7|X5|S4/)) { bgcolor = 'darkred'; } div.style.backgroundColor = bgcolor; }"
+            "modify" : "function( track, feature, div ) { var Note = feature.get('Note'); if(Note.match(/E3|X2|X3|S2|S3/)) { bg = 'pink'; } else if (Note.match(/E4|X4/)) { bg = 'hotpink'; } else if(Note.match(/E5/)) { bg = 'red'; } else if(Note.match(/E7|X5|S4/)) { bg = 'darkred'; } div.style.backgroundColor = bg; }"
          },
          "key" : "Unconfirmed Exons",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -176,13 +175,13 @@
       },
       {
          "style" : {
-            "className" : "exon",
+            "className" : "generic_parent",
             "subfeatureClasses" : {
-               "exon" : "match_part"
+               "match_part" : "feature2"
             }
          },
          "hooks" : {
-            "modify" : "function( track, feature, div ) { if(feature.get('Note') == 1) { bg = 'silver'; } else { var overlap = feature.get('Overlap'); if (overlap.match(/agi/)) { bg = 'steelblue'; } else if (overlap.match(/blist/)) { bg = 'orange'; } else if (overlap.match(/distinct/)) { bg = 'pink'; } else if (overlap.match(/outside/)) { bg = 'red'; } } div.style.backgroundColor = bg; }"
+            "modify" : "function( track, feature, div ) { if(feature.get('Note') == 1) { bg = 'silver'; } else { var overlap = feature.get('Overlap'); if (overlap.match(/agi/)) { bg = 'steelblue'; } else if (overlap.match(/blist/)) { bg = 'orange'; } else if (overlap.match(/distinct/)) { bg = 'pink'; } else if (overlap.match(/outside/)) { bg = 'red'; } }  dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = bg; }); }"
          },
          "key" : "Spliced Junctions",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -222,6 +221,29 @@
                "exon" : "feature2"
             }
          },
+         "menuTemplate" : [
+            {
+               "action" : "contentDialog",
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "title" : "ncRNA Info: {name}",
+               "label" : "ncRNA Info: {name}"
+            },
+            {
+               "iconClass" : "dijitLeaf",
+               "action" : "iframeDialog",
+               "url" : "http://[URI_PLACEHOLDER]/thalemine/keywordSearchResults.do?searchTerm={name}",
+               "title" : "Thalemine ncRNA Report: {name}",
+               "label" : "Thalemine ncRNA Report: {name}"
+            },
+            {
+               "iconClass" : "dijitIconTable",
+               "action" : "iframeDialog",
+               "url" : "http://www.arabidopsis.org/servlets/TairObject?name={name}&type=gene",
+               "title" : "TAIR ncRNA Report: {name}",
+               "label" : "TAIR ncRNA Report: {name}"
+            }
+         ],
+
          "key" : "ncRNAs",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
@@ -281,7 +303,7 @@
          "style" : {
             "className" : "feature5",
             "showLabels" : false,
-            "arrowheadClass" : null
+            "arrowheadClass" : null,
          },
          "key" : "Gaps",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -347,7 +369,7 @@
             "description" : "function(feature) { return feature.get('Type'); }"
          },
          "hooks" : {
-            "modify" : "function( track, feature, div ) { var type = feature.get('Type'); if(type.match(/indel/i)) { div.className = 'triangle invert'; div.style.backgroundColor = 'blue'; } else if(type.match(/compound/)) { div.className = 'box'; div.style.backgroundColor = 'purple'; } else if(type.match(/deletion/)) { div.style.backgroundColor = 'red'; } else if(type.match(/substitution/)) { div.style.backgroundColor = 'yellow'; } else if(type.match(/insertion/)) { div.style.backgroundColor = 'green'; } else { div.style.backgroundColor = 'white'; } }"
+            "modify" : "function( track, feature, div ) { var type = feature.get('Type'); if(type.match(/indel/i)) { div.className = 'triangle invert'; bg = 'blue'; } else if(type.match(/compound/)) { div.className = 'box'; bg = 'purple'; } else if(type.match(/deletion/)) { bg = 'red'; } else if(type.match(/substitution/)) { bg = 'yellow'; } else if(type.match(/insertion/)) { bg = 'green'; } else { bg = 'white'; } div.style.backgroundColor = bg; }"
          },
          "menuTemplate" : [
             {
@@ -399,7 +421,8 @@
       },
       {
          "style" : {
-            "className" : "generic_part_a"
+            "className" : "generic_part_a",
+            "arrowheadClass" : null
          },
          "key" : "Microarray ATH1-121501 probes",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -417,11 +440,11 @@
          "style" : {
             "className" : "generic_parent",
             "subfeatureClasses" : {
-               "match_part" : "match_part"
+               "match_part" : "feature5"
             }
          },
          "hooks" : {
-            "modify" : "function( track, feature, div ) { var dbxref = feature.get('Dbxref'); var score = feature.get('score'); var scale = 7; var s = score; score = Math.round(score); score = (score > scale) ? scale : (score < 0 ? 0 : score); var colors = {}; var ctr = 0; while(ctr <= scale) { var n = ctr * 32; var c1 = n.toString(16); c1 = (ctr == 0) ? '00' : c1; colors[ctr] = (dbxref.length > 0) ? '#' + c1 + c1 + 'FF' : '#FF' + c1 + c1; ctr++; } colors[scale] = '#FFFFFF'; score = scale - score; div.style.backgroundColor = colors[score]; }"
+            "modify" : "function( track, feature, div ) { var dbxref = feature.get('Dbxref'); var score = feature.get('score'); var scale = 7; var s = score; score = Math.round(score); score = (score > scale) ? scale : (score < 0 ? 0 : score); var colors = {}; var ctr = 0; while(ctr <= scale) { var n = ctr * 32; var c1 = n.toString(16); c1 = (ctr == 0) ? '00' : c1; colors[ctr] = (dbxref.length > 0) ? '#' + c1 + c1 + 'FF' : '#FF' + c1 + c1; ctr++; } colors[scale] = 'gainsboro'; score = scale - score; dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = colors[score]; }); }"
          },
          "key" : "AtProteome (Baerenfaller et al. 2008)",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -439,17 +462,23 @@
          "style" : {
             "className" : "generic_parent",
             "subfeatureClasses" : {
-               "match_part" : "match_part"
+               "match_part" : "feature5"
             }
          },
-         "key" : "AtProteome (Briggs et al.)",
+         "hooks" : {
+            "modify" : "function( track, feature, div ) { var dbxref = feature.get('Dbxref'); var score = Number(feature.get('score')); var scale = 9; var s = score; score = Math.round((1000*score)+0.5); score = (score > scale) ? scale : (score < 0 ? 0 : score); var colors = {}; colors[0] = '#000066', colors[1] = '#000099', colors[2] = '#0000CC', colors[3] = '#0000FF', colors[4] = '#0033FF', colors[5] = '#0066FF', colors[6] = '#0099FF', colors[7] = '#00CCFF', colors[8] = '#00FFFF', colors[scale] = 'gainsboro'; dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = colors[score]; }); }"
+         },
+         "key" : "AtPeptide (Castellana et al. 2008)",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
-         "urlTemplate" : "tracks/TAIR9_Briggs_AtProteome/{refseq}/trackData.json",
+         "urlTemplate" : "tracks/TAIR9_AtPeptide/{refseq}/trackData.json",
          "compress" : 0,
          "type" : "FeatureTrack",
          "category" : "Expression",
-         "label" : "TAIR9_Briggs_AtProteome"
+         "metadata" : {
+             "description" : "Proteomics data. Discovery and revision of Arabidopsis genes by proteogenomics Natalie E. Castellana, Samuel H. Payne, Zhouxin Shen, Mario Stanke, Vineet Bafna, and Steven P. Briggs. The white/blue box colour indicates pValue (higher to lower)."
+         },
+         "label" : "TAIR9_AtPeptide"
       }
    ],
    "formatVersion" : 1

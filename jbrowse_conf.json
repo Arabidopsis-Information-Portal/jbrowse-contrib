@@ -1,10 +1,10 @@
 // JBrowse JSON-format configuration file
 {
 
-    // aboutThisBrowser: {
-    //     title: '<i>Oryza sativa</i>',
-    //     description: 'Browser for O. sativa transcripts and RNA-seq data, produced by the Smith laboratory at Example State University.'
-    // },
+    aboutThisBrowser: {
+        title: 'Arabidopsis TAIR10 Release',
+        description: 'Browser for A. thaliana TAIR10 annotation data.'
+    },
 
     // // uncomment and edit the example below to configure a faceted track selector
     // trackSelector: {
@@ -24,6 +24,7 @@
     // uncomment to change the default sort order of the reference sequence dropdown
     // refSeqOrder: 'length descending',
 
+    suppressUsageStatistics: true,
     datasets: {
         //volvox:      { url: '?data=sample_data/json/volvox', name: 'Volvox Example' },
         //modencode:   { url: '?data=sample_data/json/modencode', name: 'MODEncode Example' },

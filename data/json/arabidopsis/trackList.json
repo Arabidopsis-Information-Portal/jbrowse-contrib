@@ -1,12 +1,12 @@
 {
    "tracks" : [
       {
-         "chunkSize" : 20000,
          "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "chunkSize" : 20000,
          "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
-         "category" : "DNA",
-         "type" : "SequenceTrack",
          "label" : "TAIR10_genome",
+         "type" : "SequenceTrack",
+         "category" : "DNA",
          "key" : "Reference Sequence"
       },
       {
@@ -19,10 +19,10 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
             }
          ],
          "key" : "Locus",
@@ -30,43 +30,49 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_loci/{refseq}/trackData.json",
          "compress" : 0,
+         "type" : "FeatureTrack",
+         "category" : "Gene",
+         "label" : "TAIR10_loci",
          "metadata" : {
             "description" : "Each locus along with its type is shown here. Loci are essentially equivalent to genes."
-         },
-         "label" : "TAIR10_loci",
-         "type" : "FeatureTrack",
-         "category" : "Gene"
+         }
       },
       {
          "style" : {
-            "className" : "feature"
+            "className" : "transcript",
+            "subfeatureClasses" : {
+               "three_prime_UTR" : "transcript-UTR",
+               "exon" : "transcript-exon",
+               "five_prime_UTR" : "transcript-UTR",
+               "CDS" : "transcript-CDS"
+            }
          },
          "menuTemplate" : [
             {
-               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
                "action" : "contentDialog",
-               "label" : "Gene Info: {name}",
-               "title" : "Gene Info: {name}"
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "title" : "Gene Info: {name}",
+               "label" : "Gene Info: {name}"
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
             }
          ],
          "key" : "Protein Coding Gene Models",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : "JBrowse/View/Track/CanvasFeatures",
-         "urlTemplate" : "tracks/TAIR10_genes/{refseq}/trackData.json",
+         "trackType" : null,
+         "urlTemplate" : "tracks/TAIR10_gene_models/{refseq}/trackData.json",
          "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "TAIR10_genes",
+         "category" : "Gene",
          "metadata" : {
             "description" : "Splice variants for loci classed as protein-coding appear in this track. This track also displays a confidence ranking for the exon-intron structure of each gene in TAIR10. Our ranking system attributes confidence rankings to each exon and gene model in TAIR10 based on the following types of experimental and computational evidence:1. Arabidopsis transcript data (ESTs, cDNAs and fragmented mRNAs from Ecker lab). 2. Proteomics data from Mass Spec experiments, 3. Cross-species alignments, 4. Vista genomic sequence conservation. Two flat files containing all exon and gene model confidence rankings (the four individual rankings as well as the overall rankings) and a detailed documentation file (gene_confidence_documentation. pdf) are located on the TAIR ftp site at: <a href='ftp://ftp.arabidopsis.org/home/tair/Genes/Gene_Confidence.pdf'>ftp://ftp.arabidopsis.org/home/tair/Genes/Gene_Confidence.pdf</a>"
-         },
-         "category" : "Gene",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "label" : "TAIR10_genes"
+         }
       },
       {
          "style" : {
@@ -79,10 +85,10 @@
          "menuTemplate" : [
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Transposon Report: {name}",
-               "title" : "Thalemine Transposon Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Transposon Report: {name}",
+               "label" : "Thalemine Transposon Report: {name}"
             }
          ],
          "key" : "Natural Transposons",
@@ -90,12 +96,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_transposons/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR10_transposons",
+         "category" : "Genomic Features",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Predicted Transposable elements. Incorporates TE annotation from TAIR and a variety of external sources including TIGR and the Quesneville group (see Quesneville track description for methodology)."
          },
-         "category" : "Genomic Features",
-         "type" : "FeatureTrack"
+         "label" : "TAIR10_transposons"
       },
       {
          "style" : {
@@ -109,12 +115,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_unconfirmed_exons/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR10_unconfirmed_exons",
+         "category" : "Gene",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "This track indicates which exons in TAIR10 are not completely confirmed by expression evidence or VISTA sequence similarity (i.e. it only displays exons for which at least one splice-junction is NOT confirmed experimentally). The string underneath each exon indicates whether the Donor or Acceptor site of the exon is unsupported. Documentation on how we generate the score (f.ex. E4) for each exon can be found here: <a href='ftp://ftp.arabidopsis.org/Genes/Gene_Confidence.pdf'>ftp://ftp.arabidopsis.org/Genes/Gene_Confidence.pdf</a>"
          },
-         "category" : "Gene",
-         "type" : "FeatureTrack"
+         "label" : "TAIR10_unconfirmed_exons"
       },
       {
          "style" : {
@@ -123,29 +129,29 @@
                "pseduogenic_exon" : "exon"
             }
          },
-         "hooks" : {
-            "modify" : "function( track, feature, div ) { dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = 'turquoise'; }); }"
-         },
          "menuTemplate" : [
             {
                "iconClass" : "dijitIconDatabase",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
             }
          ],
+         "hooks" : {
+            "modify" : "function( track, feature, div ) { dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = 'turquoise'; }); }"
+         },
          "key" : "Pseudogenes",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_pseudogenes/{refseq}/trackData.json",
          "compress" : 0,
+         "category" : "Gene",
+         "label" : "TAIR10_pseudogenes",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Gene models for pseudogenes appear in this track."
-         },
-         "type" : "FeatureTrack",
-         "label" : "TAIR10_pseudogenes",
-         "category" : "Gene"
+         }
       },
       {
          "style" : {
@@ -162,12 +168,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_Spliced_Junctions_clustered/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR10_Spliced_Junctions_clustered",
+         "category" : "Sequence Similarity",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "High-throughput RNA sequencing data (RNA-seq data) from the Ecker and Mockler labs, which were aligned to the Arabidopsis genome using alignment tools called Tophat and Supersplat, resulting in 203,000 clustered spliced RNA-seq junctions. You can choose to visualize labels for each RNA-seq junction based on:<br /><ul><li>number=the number of identical RNA-seq reads that are part of a given cluster;</li><li>color:<ul><li>blue:junctions agree with TAIR10 model;</li><li>orange: junctions agree with B-List model;</li><li>pink: at least one junction is distinct relative to the TAIR10 model;</li><li>red: the complete RNA-seq read lies in an intergenic region relative to the TAIR10 genome annotation</li></ul></li></ul>"
          },
-         "category" : "Sequence Similarity",
-         "type" : "FeatureTrack"
+         "label" : "TAIR10_Spliced_Junctions_clustered"
       },
       {
          "style" : {
@@ -181,12 +187,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_Quesneville_Transposons/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR9_Quesneville_Transposons",
+         "category" : "Community Annotation",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Predicted Transposable elements. Hadi Quesneville, Nicolas Buisine, Vincent Colot. Transposable element re-annotation of the Arabidopsis genome, In preparation. For methodology see the file Quesneville_TE_ReleaseNotes.txt on our <a href='ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR7_genome_release/TAIR7_gff3'>FTP</a> site"
          },
-         "category" : "Community Annotation",
-         "type" : "FeatureTrack"
+         "label" : "TAIR9_Quesneville_Transposons"
       },
       {
          "style" : {
@@ -197,17 +203,17 @@
          },
          "menuTemplate" : [
             {
-               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
                "action" : "contentDialog",
-               "label" : "ncRNA Info: {name}",
-               "title" : "ncRNA Info: {name}"
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "title" : "ncRNA Info: {name}",
+               "label" : "ncRNA Info: {name}"
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine ncRNA Report: {name}",
-               "title" : "Thalemine ncRNA Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine ncRNA Report: {name}",
+               "label" : "Thalemine ncRNA Report: {name}"
             }
          ],
          "key" : "ncRNAs",
@@ -215,12 +221,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_ncRNAs/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR10_ncRNAs",
+         "category" : "Gene",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "This track shows the non-coding RNA gene models."
          },
-         "category" : "Gene",
-         "type" : "FeatureTrack"
+         "label" : "TAIR10_ncRNAs"
       },
       {
          "style" : {
@@ -234,12 +240,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR_SSRs/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR_SSRs",
+         "category" : "Genomic Features",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Predicted tandem repeats. Microsatellite, minisatellite, and satellite repeat predictions generated using Tandem Repeats Finder v4.04."
          },
-         "category" : "Genomic Features",
-         "type" : "FeatureTrack"
+         "label" : "TAIR_SSRs"
       },
       {
          "style" : {
@@ -251,12 +257,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assemblies/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR9_assemblies",
+         "category" : "Assembly",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "The positions of the BAC and other genomic clones making up the tiling path are shown."
          },
-         "category" : "Assembly",
-         "type" : "FeatureTrack"
+         "label" : "TAIR9_assemblies"
       },
       {
          "style" : {
@@ -270,12 +276,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assembly_gaps/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR9_assembly_gaps",
+         "category" : "Assembly",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Assembly gaps (i.e. cases where greater than four Ns are included in the current golden path sequence)"
          },
-         "category" : "Assembly",
-         "type" : "FeatureTrack"
+         "label" : "TAIR9_assembly_gaps"
       },
       {
          "style" : {
@@ -292,12 +298,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assembly_updates/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR9_assembly_updates",
+         "category" : "Assembly",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Changes to the chromosome sequences made following TIGRs final genome release (TIGR5)"
          },
-         "category" : "Assembly",
-         "type" : "FeatureTrack"
+         "label" : "TAIR9_assembly_updates"
       },
       {
          "style" : {
@@ -309,12 +315,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_tDNAs/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "Variation",
-         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Approximate positions of T-DNA and transposon insertion mutations are shown."
          },
-         "label" : "TAIR9_tDNAs"
+         "label" : "TAIR9_tDNAs",
+         "type" : "FeatureTrack",
+         "category" : "Variation"
       },
       {
          "style" : {
@@ -329,12 +335,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_polymorphisms/{refseq}/trackData.json",
          "compress" : 0,
+         "category" : "Variation",
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_polymorphisms",
          "metadata" : {
             "description" : "Positions of polymorphisms are shown, including SNPs, TILLing mutations, and other variants including small insertions and deletions."
-         },
-         "label" : "TAIR9_polymorphisms",
-         "category" : "Variation",
-         "type" : "FeatureTrack"
+         }
       },
       {
          "style" : {
@@ -345,12 +351,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_markers/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR9_markers",
+         "category" : "Variation",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Positions of genetic markers are shown here."
          },
-         "category" : "Variation",
-         "type" : "FeatureTrack"
+         "label" : "TAIR9_markers"
       },
       {
          "style" : {
@@ -362,12 +368,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_Microarray_probes/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR9_Microarray_probes",
+         "category" : "Expression",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "GFF file provided by the Arabidopsis thaliana Integrated Database (ATIDB) based at the John Innes Centre (JIC)"
          },
-         "category" : "Expression",
-         "type" : "FeatureTrack"
+         "label" : "TAIR9_Microarray_probes"
       },
       {
          "style" : {
@@ -384,12 +390,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_AtProteome/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "TAIR9_AtProteome",
+         "category" : "Expression",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Proteomics data. (AtProteome <a href='http://fgcz-atproteome.unizh.ch/index.php'>http://fgcz-atproteome.unizh.ch/index.php</a>) Baerenfaller K, Grossmann J, Grobei MA, Hull R, Hirsch-Hoffmann M, Yalovsky S, Zimmermann P, Grossniklaus U, Gruissem W, Baginsky S. Genome-scale proteomics reveals Arabidopsis thaliana gene models and proteome dynamics. Science 2008. 320(5878):938-4. The white/blue colour of the peptide boxes is a measure of how many spectra the peptide was identified; the bluer the colour, the more spectra led to the peptide identification. Whole genome hits (peptides which did not map to TAIR7 proteins) are shown in shades of red. The redder the peptide box, the more spectra led to the peptide identification."
          },
-         "category" : "Expression",
-         "type" : "FeatureTrack"
+         "label" : "TAIR9_AtProteome"
       },
       {
          "style" : {
@@ -406,16 +412,30 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_AtPeptide/{refseq}/trackData.json",
          "compress" : 0,
+         "category" : "Expression",
+         "type" : "FeatureTrack",
+         "label" : "TAIR9_AtPeptide",
          "metadata" : {
             "description" : "Proteomics data. Discovery and revision of Arabidopsis genes by proteogenomics Natalie E. Castellana, Samuel H. Payne, Zhouxin Shen, Mario Stanke, Vineet Bafna, and Steven P. Briggs. The white/blue box colour indicates pValue (higher to lower)."
-         },
-         "label" : "TAIR9_AtPeptide",
-         "category" : "Expression",
-         "type" : "FeatureTrack"
-      }
+         }
+      },
+      {
+            "type": "JBrowse/View/Track/Wiggle/XYPlot",
+            "key": "1DDM1-W50.CG_seedlinkg-h1-Zemach_2013",
+            "label": "experiment1190",
+            "baseUrl": "http://genomevolution.org/coge/api/v1/jbrowse/experiment/1190/",
+            "category" : "EPIC-CoGe",
+            "storeClass": "JBrowse/Store/SeqFeature/REST",
+            "metadata" : {
+		"description" : "The Arabidopsis nucleosome remodeler DDM1 allows DNA methyltransferases to access H1-containing heterochromatin. Zemach A, Kim MY, Hsieh PH, Coleman-Derr D et al. Cell 2013 Mar 28;153(1):193-205. PMID: 23540698"
+	    },
+            "histograms": {
+                "store": "JBrowse/Store/SeqFeature/REST"
+            }
+        }
    ],
    "names" : {
-      "url" : "names/",
+      "url" : "index/",
       "type" : "Hash"
    },
    "dataset_id" : "arabidopsis",

@@ -1,4 +1,10 @@
 {
+   "plugins" :
+      {
+         "location" : "./plugins/Combo_trackSelector",
+         "name" : "Combo_trackSelector"
+      },
+
    "tracks" : [
       {
          "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
@@ -328,7 +334,7 @@
             "description" : "function(feature) { return feature.get('Type'); }"
          },
          "hooks" : {
-            "modify" : "function( track, feature, div ) { var type = feature.get('Type'); if(type.match(/indel/i)) { div.className = 'triangle invert'; bg = 'blue'; } else if(type.match(/compound/)) { div.className = 'box'; bg = 'purple'; } else if(type.match(/deletion/)) { bg = 'red'; } else if(type.match(/substitution/)) { bg = 'yellow'; } else if(type.match(/insertion/)) { bg = 'green'; } else { bg = 'white'; } div.style.backgroundColor = bg; }"
+            "modify" : "function( track, feature, div ) { var type = feature.get('Type'); if(type.match(/indel/i)) { div.className = 'triangle invert'; bg = 'blue'; } else if(type.match(/compound/)) { div.className = 'box'; bg = 'purple'; } else if(type.match(/deletion/)) { bg = 'red'; } else if(type.match(/substitution/)) { bg = 'yellow'; } else if(type.match(/insertion/)) { bg = 'green'; } else { bg = 'white'; } div.style.backgroundColor = bg; console.log(feature);}"
          },
          "key" : "Polymorphisms",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
@@ -418,22 +424,32 @@
          "metadata" : {
             "description" : "Proteomics data. Discovery and revision of Arabidopsis genes by proteogenomics Natalie E. Castellana, Samuel H. Payne, Zhouxin Shen, Mario Stanke, Vineet Bafna, and Steven P. Briggs. The white/blue box colour indicates pValue (higher to lower)."
          }
-      },
-      {
-            "type": "JBrowse/View/Track/Wiggle/XYPlot",
-            "key": "1DDM1-W50.CG_seedlinkg-h1-Zemach_2013",
-            "label": "experiment1190",
-            "baseUrl": "http://genomevolution.org/coge/api/v1/jbrowse/experiment/1190/",
-            "category" : "EPIC-CoGe",
-            "storeClass": "JBrowse/Store/SeqFeature/REST",
-            "metadata" : {
-		"description" : "The Arabidopsis nucleosome remodeler DDM1 allows DNA methyltransferases to access H1-containing heterochromatin. Zemach A, Kim MY, Hsieh PH, Coleman-Derr D et al. Cell 2013 Mar 28;153(1):193-205. PMID: 23540698"
-	    },
-            "histograms": {
-                "store": "JBrowse/Store/SeqFeature/REST"
-            }
-        }
+      }
    ],
+
+       "trackSelector" : {
+      
+	   "renameFacets" : {
+               "key": "Name",
+               "label": "ID"
+	   },
+      "displayColumns" : [
+         "Lab Name",
+         "Platform",
+         "key",
+         "Description",
+         "label",
+         "Pubmed ID",
+         "Processing",
+         "Protocol",
+         "Series",
+         "Samples",
+         "Gene Mutant"
+      ],
+      "type" : "Hierarchical",
+      "escapeHTMLInData" : false
+   },
+
    "names" : {
       "url" : "index/",
       "type" : "Hash"

@@ -36,8 +36,7 @@ Once the `JBrowse` setup has completed successfully and data has been downloaded
 	$ ln -sf ../../data/jbrowse data
 
 	### copy config file(s), modified css/html and loading script to JBrowse installation directory
-	$ cp ../jbrowse-contrib/{jbrowse-load.sh,track_styles.css,index.html,jbrowse_conf.json} .
-	$ cp ../jbrowse-contrib/docs/* docs/.
+	$ cp ../jbrowse-contrib/jbrowse-load.sh .
 
 	### run the loading script
 	$ ./jbrowse-load.sh > jbrowse-load.log 2> jbrowse-load.err

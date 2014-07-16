@@ -1,3 +1,3 @@
 [submodule "jbrowse-latest-release"]
 	path = jbrowse-latest-release
-	url = git@github.com:GMOD/jbrowse.git
+	url = git@github.com:Arabidopsis-Information-Portal/jbrowse.git

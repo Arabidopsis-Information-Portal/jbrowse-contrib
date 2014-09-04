@@ -1,10 +1,8 @@
 {
-   "plugins" :
-      {
-         "location" : "./plugins/Combo_trackSelector",
-         "name" : "Combo_trackSelector"
-      },
-
+   "plugins" : {
+      "location" : "./plugins/Combo_trackSelector",
+      "name" : "Combo_trackSelector"
+   },
    "tracks" : [
       {
          "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
@@ -56,7 +54,7 @@
          "menuTemplate" : [
             {
                "action" : "contentDialog",
-               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Brief Description</strong></td><td>{full_name}</td></tr><tr><td><strong>Symbol</strong></td><td>{symbol}</td></tr><tr><td><strong>Alias</strong></td><td>{alias}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
                "title" : "Gene Info: {name}",
                "label" : "Gene Info: {name}"
             },
@@ -424,15 +422,37 @@
          "metadata" : {
             "description" : "Proteomics data. Discovery and revision of Arabidopsis genes by proteogenomics Natalie E. Castellana, Samuel H. Payne, Zhouxin Shen, Mario Stanke, Vineet Bafna, and Steven P. Briggs. The white/blue box colour indicates pValue (higher to lower)."
          }
+      },
+      {
+         "style" : {
+            "className" : "transcript",
+            "color" : "#66CCFF",
+            "connectorThickness" : 2,
+            "connectorColor" : "#C2C2C2"
+         },
+         "key" : "Marquez et al. Alternative Splicing (AS) variants",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/Marquez_AlternateSplice/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "label" : "Marquez_AlternateSplice",
+         "category" : "Community Annotation",
+         "metadata" : {
+            "description" : "A normalized cDNA library was generated and sequenced with paired-end Illumina.The reads were aligned to the Arabidopsis thaliana reference genome version TAIR9 (www.arabidopsis.org) using Bowtie (Langmead et al. 2009). TopHat was used to detect the splice junctions. AU-richness of introns was examined as well as overlapping introns within the genes. ASTALAVISTA software was used for determining types of AS events. The transcripts were validated with a high-resolution RT-PCR alternative splicing panel (HRRT-PCR panel). Transcriptome survey reveals increased complexity of the alternative splicing landscape in Arabidopsis Yamile Marquez,John W.S. Brown,Craig Simpson,Andrea Barta,and Maria Kalyna Genome Research 2012 22: 118401195"
+         },
+         "subfeatures" : 1
       }
    ],
-
-       "trackSelector" : {
-      
-	   "renameFacets" : {
-               "key": "Name",
-               "label": "ID"
-	   },
+   "names" : {
+      "url" : "index/",
+      "type" : "Hash"
+   },
+   "trackSelector" : {
+      "renameFacets" : {
+         "label" : "ID",
+         "key" : "Name"
+      },
       "displayColumns" : [
          "Lab Name",
          "Platform",
@@ -448,11 +468,6 @@
       ],
       "type" : "Hierarchical",
       "escapeHTMLInData" : false
-   },
-
-   "names" : {
-      "url" : "index/",
-      "type" : "Hash"
    },
    "dataset_id" : "arabidopsis",
    "formatVersion" : 1

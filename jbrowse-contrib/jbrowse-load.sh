@@ -15,8 +15,10 @@ JBROWSE_DATA=data/json/arabidopsis
 
 # Genes
 bin/flatfile-to-json.pl --out $JBROWSE_DATA --gff $TAIR10_CUSTOM_GFF3/TAIR10_GFF3_genes_transposons.AIP.gff \
-    --trackLabel "TAIR10_genes" --key "Protein Coding Gene Models" --nameAttributes "name,alias,id,symbol" \
-    --trackType "JBrowse/View/Track/CanvasFeatures" --type "gene,transposable_element_gene"
+    --trackLabel "TAIR10_loci" --key "Locus" --nameAttributes "name,alias,id,symbol" \
+    --trackType "JBrowse/View/Track/CanvasFeatures" --type "gene,transposable_element_gene,pseudogene" --noSubfeatures
+
+./bin/flatfile-to-json.pl --out data/json/arabidopsis/ --gff /usr/local/projects/AIP/DataProviders/TAIR/custom_data/ftp.arabidopsis.org/Genes/TAIR10_genome_release/TAIR10_gff3/TAIR10_GFF3_genes_transposons.AIP.gff --key "Protein Coding Gene Models" --nameAttributes "name,alias,id,symbol" --trackType "JBrowse/View/Track/HTMLFeatures" --type "mRNA" --trackLabel "TAIR10_genes"
 
 bin/flatfile-to-json.pl --out $JBROWSE_DATA --gff $TAIR10_CUSTOM_GFF3/TAIR10_GFF3_genes_transposons.AIP.gff \
     --trackLabel "TAIR10_transposons" --key "Natural Transposons" --type "transposable_element:TAIR10" \
@@ -98,5 +100,5 @@ bin/flatfile-to-json.pl --out $JBROWSE_DATA \
 
 # Index names and set up autocompletion
 bin/generate-names.pl --out data/json/arabidopsis \
-    --tracks "TAIR10_genes,TAIR10_pseudogenes,TAIR10_ncRNAs,TAIR10_transposons,TAIR9_Quesneville_Transposons,TAIR9_markers,TAIR9_polymorphisms,TAIR_SSRs,TAIR9_tDNAs,TAIR9_Microarray_probes,TAIR9_assemblies" \
+    --tracks "TAIR10_genes,TAIR10_loci,TAIR10_pseudogenes,TAIR10_ncRNAs,TAIR10_transposons,TAIR9_Quesneville_Transposons,TAIR9_markers,TAIR9_polymorphisms,TAIR_SSRs,TAIR9_tDNAs,TAIR9_Microarray_probes,TAIR9_assemblies" \
     --workdir /opt/www/araport/tmp --verbose --mem 4076000000

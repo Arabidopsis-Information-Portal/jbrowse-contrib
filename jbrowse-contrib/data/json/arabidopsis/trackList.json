@@ -1,18 +1,22 @@
 {
+   "plugins" : {
+      "location" : "./plugins/Combo_trackSelector",
+      "name" : "Combo_trackSelector"
+   },
    "tracks" : [
       {
-         "chunkSize" : 20000,
          "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "chunkSize" : 20000,
          "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
-         "category" : "DNA",
-         "type" : "SequenceTrack",
          "label" : "TAIR10_genome",
+         "type" : "SequenceTrack",
+         "category" : "DNA",
          "key" : "Reference Sequence"
       },
       {
          "style" : {
             "className" : "feature",
-            "description" : "locus_type,note"
+            "description" : "locus_type,note,description"
          },
          "menuTemplate" : [
             {
@@ -20,10 +24,10 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
             }
          ],
          "key" : "Locus",
@@ -31,21 +35,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_loci/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "category" : "Gene",
          "type" : "FeatureTrack",
          "metadata" : {
             "description" : "The total transcribed region of an annotated gene including coding and non-coding genes. The arrow indicates the direction of transcription."
          },
          "label" : "TAIR10_loci"
-=======
-         "metadata" : {
-            "description" : "The total transcribed region of an annotated gene including coding and non-coding genes. The arrow indicates the direction of transcription."
-         },
-         "label" : "TAIR10_loci",
-         "type" : "FeatureTrack",
-         "category" : "Gene"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -53,68 +48,43 @@
             "subfeatureClasses" : {
                "three_prime_UTR" : "transcript-UTR",
                "exon" : "transcript-exon",
-<<<<<<< HEAD
                "five_prime_UTR" : "transcript-UTR",
                "CDS" : "transcript-CDS"
             },
-            "description" : "note,computational_description"
-=======
-               "CDS" : "transcript-CDS",
-               "five_prime_UTR" : "transcript-UTR"
-            }
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
+            "description" : "note,description,computational_description"
          },
          "menuTemplate" : [
             {
-               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Brief Description</strong></td><td>{full_name}</td></tr><tr><td><strong>Symbol</strong></td><td>{symbol}</td></tr><tr><td><strong>Alias</strong></td><td>{alias}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
                "action" : "contentDialog",
-               "label" : "Gene Info: {name}",
-               "title" : "Gene Info: {name}"
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Brief Description</strong></td><td>{full_name}</td></tr><tr><td><strong>Symbol</strong></td><td>{symbol}</td></tr><tr><td><strong>Alias</strong></td><td>{alias}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "title" : "Gene Info: {name}",
+               "label" : "Gene Info: {name}"
             },
             {
                "iconClass" : "dijitLeaf",
+               "action" : "iframeDialog",
                "url" : "/thalemine/portal.do?externalids={name}",
-<<<<<<< HEAD
                "title" : "Thalemine Gene Report: {name}",
                "label" : "Thalemine Gene Report: {name}"
             },
-            {
-               "iconClass" : "dijitIconDatabase",
-               "action" : "contentDialog",
-               "content" : "function(track,feature,div ){ return SequenceViewer(track,feature,div)}",
-=======
-               "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
-            },
-            {
-               "iconClass" : "dijitIconDatabase",
-               "content" : "function(track,feature,div ){ return SequenceViewer(track,feature,div)}",
-               "action" : "contentDialog",
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
-               "label" : "SequenceViewer"
-            }
+	     {   
+		 "label" : "View Sequence",
+		 "iconClass" : "dijitIconDatabase",
+		 "action": "contentDialog",
+		 "content": "function(track,feature,div ){ return SequenceViewer(track,feature,div)}"
+	     }
          ],
          "key" : "Protein Coding Gene Models",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_gene_models/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "label" : "TAIR10_genes",
          "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Shows the exon (boxes) and intron (lines) structure of each protein-coding transcript with direction of transcription indicated. The gene model confidence rankings are embedded in this track. Documentation for the ranking system can be found at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>"
          },
          "category" : "Gene"
-=======
-         "metadata" : {
-            "description" : "Shows the exon (boxes) and intron (lines) structure of each protein-coding transcript with direction of transcription indicated. The gene model confidence rankings are embedded in this track. Documentation for the ranking system can be found at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>"
-         },
-         "category" : "Gene",
-         "type" : "FeatureTrack",
-         "label" : "TAIR10_genes"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -127,10 +97,10 @@
          "menuTemplate" : [
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Transposon Report: {name}",
-               "title" : "Thalemine Transposon Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Transposon Report: {name}",
+               "label" : "Thalemine Transposon Report: {name}"
             }
          ],
          "key" : "Natural Transposons",
@@ -138,21 +108,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_transposons/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Genomic Features",
          "label" : "TAIR10_transposons",
          "metadata" : {
             "description" : "Incorporates TE annotation from TAIR and external sources including TIGR and Colot group."
          }
-=======
-         "label" : "TAIR10_transposons",
-         "metadata" : {
-            "description" : "Incorporates TE annotation from TAIR and external sources including TIGR and Colot group."
-         },
-         "category" : "Genomic Features",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -166,21 +127,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_unconfirmed_exons/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Gene",
          "label" : "TAIR10_unconfirmed_exons",
          "metadata" : {
             "description" : "Shows the exons in TAIR10 which are neither supported by experimental evidence nor bioinformatic analysis. The detailed scoring strategy is available at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>"
          }
-=======
-         "label" : "TAIR10_unconfirmed_exons",
-         "metadata" : {
-            "description" : "Shows the exons in TAIR10 which are neither supported by experimental evidence nor bioinformatic analysis. The detailed scoring strategy is available at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>"
-         },
-         "category" : "Gene",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -189,29 +141,29 @@
                "pseduogenic_exon" : "exon"
             }
          },
-         "hooks" : {
-            "modify" : "function( track, feature, div ) { dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = 'turquoise'; }); }"
-         },
          "menuTemplate" : [
             {
                "iconClass" : "dijitIconDatabase",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
             }
          ],
+         "hooks" : {
+            "modify" : "function( track, feature, div ) { dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = 'turquoise'; }); }"
+         },
          "key" : "Pseudogenes",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_pseudogenes/{refseq}/trackData.json",
          "compress" : 0,
+         "category" : "Gene",
+         "label" : "TAIR10_pseudogenes",
+         "type" : "FeatureTrack",
          "metadata" : {
             "description" : "Shows the pseudogene transcript."
-         },
-         "type" : "FeatureTrack",
-         "label" : "TAIR10_pseudogenes",
-         "category" : "Gene"
+         }
       },
       {
          "style" : {
@@ -228,21 +180,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_Spliced_Junctions_clustered/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Sequence Similarity",
          "label" : "TAIR10_Spliced_Junctions_clustered",
          "metadata" : {
             "description" : "RNA-seq data from Ecker and Mockler labs were aligned to TAIR10 using Tophat and Supersplat. The numbers indicate the supporting read counts for each junction."
          }
-=======
-         "label" : "TAIR10_Spliced_Junctions_clustered",
-         "metadata" : {
-            "description" : "RNA-seq data from Ecker and Mockler labs were aligned to TAIR10 using Tophat and Supersplat. The numbers indicate the supporting read counts for each junction."
-         },
-         "category" : "Sequence Similarity",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -256,21 +199,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_Quesneville_Transposons/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Community Annotation",
          "label" : "TAIR9_Quesneville_Transposons",
          "metadata" : {
             "description" : "Shows the predicted transposable elements using TAIR7 genome and additional reference sets composed mainly of mosaics of existing genomic sequences."
          }
-=======
-         "label" : "TAIR9_Quesneville_Transposons",
-         "metadata" : {
-            "description" : "Shows the predicted transposable elements using TAIR7 genome and additional reference sets composed mainly of mosaics of existing genomic sequences."
-         },
-         "category" : "Community Annotation",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -281,17 +215,17 @@
          },
          "menuTemplate" : [
             {
-               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
                "action" : "contentDialog",
-               "label" : "ncRNA Info: {name}",
-               "title" : "ncRNA Info: {name}"
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "title" : "ncRNA Info: {name}",
+               "label" : "ncRNA Info: {name}"
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine ncRNA Report: {name}",
-               "title" : "Thalemine ncRNA Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine ncRNA Report: {name}",
+               "label" : "Thalemine ncRNA Report: {name}"
             }
          ],
          "key" : "ncRNA",
@@ -299,21 +233,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_ncRNAs/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Gene",
          "label" : "TAIR10_ncRNAs",
          "metadata" : {
             "description" : "Shows the non-coding RNA transcripts."
          }
-=======
-         "label" : "TAIR10_ncRNAs",
-         "metadata" : {
-            "description" : "Shows the non-coding RNA transcripts."
-         },
-         "category" : "Gene",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -327,21 +252,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR_SSRs/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Genomic Features",
          "label" : "TAIR_SSRs",
          "metadata" : {
             "description" : "Regions of tandem repeats including  microsatellite, minisatellite, and satellite, as computed using Tandem Repeats Finder v4.04."
          }
-=======
-         "label" : "TAIR_SSRs",
-         "metadata" : {
-            "description" : "Regions of tandem repeats including  microsatellite, minisatellite, and satellite, as computed using Tandem Repeats Finder v4.04."
-         },
-         "category" : "Genomic Features",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -353,21 +269,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assemblies/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Assembly",
          "label" : "TAIR9_assemblies",
          "metadata" : {
             "description" : "Shows the whole-genome annotation including BAC and other genomic clones."
          }
-=======
-         "label" : "TAIR9_assemblies",
-         "metadata" : {
-            "description" : "Shows the whole-genome annotation including BAC and other genomic clones."
-         },
-         "category" : "Assembly",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -381,21 +288,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assembly_gaps/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Assembly",
          "label" : "TAIR9_assembly_gaps",
          "metadata" : {
             "description" : "Shows the regions where greater than four Ns are included in the current golden path sequence."
          }
-=======
-         "label" : "TAIR9_assembly_gaps",
-         "metadata" : {
-            "description" : "Shows the regions where greater than four Ns are included in the current golden path sequence."
-         },
-         "category" : "Assembly",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -412,21 +310,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assembly_updates/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Assembly",
          "label" : "TAIR9_assembly_updates",
          "metadata" : {
             "description" : "Changes to sequences following TIGR 5 genome release."
          }
-=======
-         "label" : "TAIR9_assembly_updates",
-         "metadata" : {
-            "description" : "Changes to sequences following TIGR 5 genome release."
-         },
-         "category" : "Assembly",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -438,21 +327,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_tDNAs/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "label" : "TAIR9_tDNAs",
          "metadata" : {
             "description" : "Shows approximate positions of T-DNA and transposon insertion sites."
          },
          "category" : "Variation",
          "type" : "FeatureTrack"
-=======
-         "category" : "Variation",
-         "type" : "FeatureTrack",
-         "metadata" : {
-            "description" : "Shows approximate positions of T-DNA and transposon insertion sites."
-         },
-         "label" : "TAIR9_tDNAs"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -467,21 +347,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_polymorphisms/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Variation",
          "metadata" : {
             "description" : "Shows the positions of polymorphisms , including SNPs, TILLing mutations, small insertions and deletions."
          },
          "label" : "TAIR9_polymorphisms"
-=======
-         "metadata" : {
-            "description" : "Shows the positions of polymorphisms , including SNPs, TILLing mutations, small insertions and deletions."
-         },
-         "label" : "TAIR9_polymorphisms",
-         "category" : "Variation",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -492,21 +363,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_markers/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Variation",
          "label" : "TAIR9_markers",
          "metadata" : {
             "description" : "Shows the positions of genetic markers."
          }
-=======
-         "label" : "TAIR9_markers",
-         "metadata" : {
-            "description" : "Shows the positions of genetic markers."
-         },
-         "category" : "Variation",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -518,21 +380,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_Microarray_probes/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Expression",
          "label" : "TAIR9_Microarray_probes",
          "metadata" : {
             "description" : "This genome array is based on the initial release of Arabidopsis genome in 2000 and subsequent TIGR reannotation."
          }
-=======
-         "label" : "TAIR9_Microarray_probes",
-         "metadata" : {
-            "description" : "This genome array is based on the initial release of Arabidopsis genome in 2000 and subsequent TIGR reannotation."
-         },
-         "category" : "Expression",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -549,21 +402,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_AtProteome/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Expression",
          "label" : "TAIR9_AtProteome",
          "metadata" : {
             "description" : "AtProteome assembles proteomic data of and provides information about identified proteotypic peptides, abundances and tissue and organelle-specific appearance."
          }
-=======
-         "label" : "TAIR9_AtProteome",
-         "metadata" : {
-            "description" : "AtProteome assembles proteomic data of and provides information about identified proteotypic peptides, abundances and tissue and organelle-specific appearance."
-         },
-         "category" : "Expression",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
@@ -580,27 +424,18 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_AtPeptide/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "type" : "FeatureTrack",
          "category" : "Expression",
          "metadata" : {
             "description" : "Proteomics data. Discovery and revision of Arabidopsis genes by proteogenomics Natalie E. Castellana, Samuel H. Payne, Zhouxin Shen, Mario Stanke, Vineet Bafna, and Steven P. Briggs. The white/blue box colour indicates pValue (higher to lower)."
          },
          "label" : "TAIR9_AtPeptide"
-=======
-         "metadata" : {
-            "description" : "Proteomics data. Discovery and revision of Arabidopsis genes by proteogenomics Natalie E. Castellana, Samuel H. Payne, Zhouxin Shen, Mario Stanke, Vineet Bafna, and Steven P. Briggs. The white/blue box colour indicates pValue (higher to lower)."
-         },
-         "label" : "TAIR9_AtPeptide",
-         "category" : "Expression",
-         "type" : "FeatureTrack"
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
       },
       {
          "style" : {
             "className" : "transcript",
-            "connectorThickness" : 2,
             "color" : "#66CCFF",
+            "connectorThickness" : 2,
             "connectorColor" : "#C2C2C2"
          },
          "key" : "Alternative Splicing Variants (Marquez et al, 2012)",
@@ -608,38 +443,24 @@
          "trackType" : null,
          "urlTemplate" : "tracks/Marquez_AlternateSplice/{refseq}/trackData.json",
          "compress" : 0,
-<<<<<<< HEAD
          "label" : "Marquez_AlternateSplice",
          "type" : "FeatureTrack",
-=======
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
          "metadata" : {
             "description" : "A normalized cDNA library was generated from pooled seedling and floral tissues and sequenced with paired-end Illumina.The reads were aligned to the TAIR9 reference genome using Bowtie.TopHat was used to detect the splice junctions. Transcriptome survey reveals increased complexity of the alternative splicing landscape."
          },
          "category" : "Community Annotation",
-<<<<<<< HEAD
-=======
-         "type" : "FeatureTrack",
-         "label" : "Marquez_AlternateSplice",
->>>>>>> 4ba4d2295f62c3c454f26f721a53692d350fa2b5
          "subfeatures" : 1
       }
    ],
-   "plugins" : {
-      "location" : "./plugins/Combo_trackSelector",
-      "name" : "Combo_trackSelector"
-   },
    "names" : {
       "url" : "names/",
       "type" : "Hash"
    },
-   "dataset_id" : "arabidopsis",
    "trackSelector" : {
       "renameFacets" : {
          "label" : "ID",
          "key" : "Name"
       },
-      "type" : "Hierarchical",
       "displayColumns" : [
          "Lab Name",
          "Platform",
@@ -653,7 +474,9 @@
          "Samples",
          "Gene Mutant"
       ],
+      "type" : "Hierarchical",
       "escapeHTMLInData" : false
    },
+   "dataset_id" : "arabidopsis",
    "formatVersion" : 1
 }

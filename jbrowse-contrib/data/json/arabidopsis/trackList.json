@@ -1,7 +1,7 @@
 {
    "plugins" : {
-      "location" : "./plugins/Combo_trackSelector",
-      "name" : "Combo_trackSelector"
+      "location" : "./plugins/ComboTrackSelector",
+      "name" : "ComboTrackSelector"
    },
    "tracks" : [
       {
@@ -67,7 +67,7 @@
                "title" : "Thalemine Gene Report: {name}",
                "label" : "Thalemine Gene Report: {name}"
             },
-	     {   
+	     {
 		 "label" : "View Sequence",
 		 "iconClass" : "dijitIconDatabase",
 		 "action": "contentDialog",
@@ -457,23 +457,6 @@
       "type" : "Hash"
    },
    "trackSelector" : {
-      "renameFacets" : {
-         "label" : "ID",
-         "key" : "Name"
-      },
-      "displayColumns" : [
-         "Lab Name",
-         "Platform",
-         "key",
-         "Description",
-         "label",
-         "Pubmed ID",
-         "Processing",
-         "Protocol",
-         "Series",
-         "Samples",
-         "Gene Mutant"
-      ],
       "type" : "Hierarchical",
       "escapeHTMLInData" : false
    },

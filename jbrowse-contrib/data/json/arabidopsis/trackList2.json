@@ -2,15 +2,6 @@
 	"dataset_id": "EPIC-CoGe",
 
 	"tracks": [
-	        {
-		"storeClass" : "JBrowse/Store/Sequence/StaticChunked",
-		"chunkSize" : 20000,
-		"urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
-		"label" : "TAIR10_genome",
-		"type" : "SequenceTrack",
-		"category" : "DNA",
-		"key" : "Reference Sequence"
-		},
 		{"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/280/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"280","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"CG_Col-0_Stroud_2013"},
 		{"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/244/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"244","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"CG_Col-0_Stroud_2013"},
 		{"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/159/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"159","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"CG_Col-0_Stroud_2013"},
@@ -36,11 +27,11 @@
 		{"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/922/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"922","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"CHH_seedling-Col-0_Zemach_2013"},
 		{"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/1005/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"1005","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"CHH_seedling-Col-0_Zemach_2013"},
 		{"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/1013/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"1013","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"MNase_Col-0_Zemach_2013"},
-		{"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/1201/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"1201","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"RNA-seq_Col-0_Schmitz_2013"}	        
+		{"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/1201/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"1201","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"RNA-seq_Col-0_Schmitz_2013"},
+	        {"baseUrl":"https://genomevolution.org/coge/api/v1/jbrowse/experiment/notebook/758/","storeClass":"JBrowse/Store/SeqFeature/REST","style":{"variance_band_color":"rgba(0,0,0,0.3)","neg_color":"#D10076","pos_color":"#00948A","origin_color":"#888"},"category":"EPIC-CoGe Col-0","label":"758","type":"JBrowse/View/Track/Wiggle/XYPlot","key":"Combination of Col-0 Meythlation"},
 	],
 
        "trackSelector" : {
-      
 	   "renameFacets" : {
                "key": "Name",
                "label": "ID"

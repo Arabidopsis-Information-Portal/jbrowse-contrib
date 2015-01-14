@@ -1,7 +1,11 @@
 {
    "plugins" : {
-      "location" : "./plugins/ComboTrackSelector",
-      "name" : "ComboTrackSelector"
+      "ComboTrackSelector" : {
+          "location" : "./plugins/ComboTrackSelector",
+      },
+      "SeqLighter" : {
+          "location" : "./plugins/SeqLighter",
+      }
    },
    "tracks" : [
       {

@@ -696,7 +696,10 @@
       },
       "SeqLighter" : {
          "location" : "./plugins/SeqLighter"
-      }
+      },
+      "AraportCustomizations" : {
+         "location" : "./plugins/AraportCustomizations"
+      },       
    },
    "names" : {
       "url" : "names/",

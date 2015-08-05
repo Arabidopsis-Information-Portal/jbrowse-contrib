@@ -1,10 +1,13 @@
 {
+   "include" : [
+       "functions/fmtDetail.conf"
+   ],
    "tracks" : [
       {
          "chunkSize" : 20000,
          "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
          "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
-         "category" : "Assembly",
+         "category" : "B. Assembly",
          "type" : "SequenceTrack",
          "label" : "TAIR10_genome",
          "metadata" : {
@@ -24,13 +27,12 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assemblies/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "Assembly",
+         "category" : "B. Assembly",
          "type" : "FeatureTrack",
          "metadata" : {
-            "description" : "Shows the whole-genome annotation including BAC and other genomic clones.",
+            "Description" : "Shows the whole-genome annotation including BAC and other genomic clones.",
        	    "Source":"TAIR9 data (released 06/2009)",
        	    "URL":"<a href=ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/TAIR9_GFF3_assemblies.gff>ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/TAIR9_GFF3_assemblies.gff</a>"
-			
          },
          "label" : "TAIR9_assemblies"
       },
@@ -62,7 +64,7 @@
        	    "Source":"TAIR10",
        	    "URL":"<a href=http://www.ncbi.nlm.nih.gov/pubmed/22140109>http://www.ncbi.nlm.nih.gov/pubmed/22140109</a>"
          },
-         "category" : "TAIR10",
+         "category" : "C. TAIR10",
          "type" : "FeatureTrack"
       },
       {
@@ -87,7 +89,7 @@
          },
          "label" : "TAIR10_Spliced_Junctions_clustered",
          "type" : "FeatureTrack",
-         "category" : "Splicing"
+         "category" : "D. Splicing"
       },
      {
          "style" : {
@@ -103,7 +105,7 @@
          "compress" : 0,
          "type" : "FeatureTrack",
          "label" : "Marquez_AlternateSplice",
-         "category" : "Splicing",
+         "category" : "D. Splicing",
          "metadata" : {
             "description" : "A normalized cDNA library was generated from pooled seedling and floral tissues and sequenced with paired-end Illumina.The reads were aligned to the TAIR9 reference genome using Bowtie.TopHat was used to detect the splice junctions. Transcriptome survey reveals increased complexity of the alternative splicing landscape."
          },
@@ -118,7 +120,7 @@
          "trackType" : null,
          "urlTemplate" : "tracks/All_PEAT/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "UTR",
+         "category" : "E. UTR",
          "metadata" : {
             "Description" : "A large-scale transcription start site (TSS) data set was generated from 10-day-old wild-type root using paired-end analysis of transcription start site (PEAT) protocol, providing TSS locations based on TAIR10 gene annotation. Each PEAT tag cluster (or “peak”) requires a minimum of 10 reads.",
        	    "Source":"Morton et al. 2014",
@@ -136,7 +138,7 @@
          "compress" : 0,
          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "PEAT_coverage",
-         "category" : "UTR",
+         "category" : "E. UTR",
          "metadata" : {
             "Description" : "This track shows the read coverage of raw BAM files and reveals the landscape of transcription initiation in Arabidopsis whole root samples.",
        	    "Source":"Morton et al. 2014",
@@ -152,7 +154,7 @@
          "urlTemplate" : "./raw/fwd_wt2_HQ2.bw",
          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "UTR_bigwig_fwd_duc",
-         "category" : "UTR",
+         "category" : "E. UTR",
          "metadata" : {
             "Description" : "This experiment examined the relative 3'UTR positioning and expression in 14-day-old Col-0 seedling samples using Helicos BioSciences Direct RNA Sequencing. This track displays the forward-strand read-depth data from the summed wild-type replicates for this experiment. Each peak indicates the number of reads that end at a given position.",
        	    "Source":"Duc et al., 2013",
@@ -168,7 +170,7 @@
 	"urlTemplate" : "./raw/rev_wt2_HQ2.bw",
          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "UTR_bigwig_rev_duc",
-         "category" : "UTR",
+         "category" : "E. UTR",
          "metadata" : {
             "Description" : "This experiment examined the relative 3'UTR positioning and expression in 14-day-old Col-0 seedling samples using Helicos BioSciences Direct RNA Sequencing. This track displays the forward-strand read-depth data from the summed wild-type replicates for this experiment. Each peak indicates the number of reads that end at a given position.",
        	    "Source":"Duc et al., 2013",
@@ -193,7 +195,7 @@
          "compress" : 0,
          "label" : "MAKER_EST_FLcDNA_est2genome",
          "type" : "CanvasFeatures",
-         "category" : "Alignment",
+         "category" : "F. Alignment",
          "metadata" : {
             "Description" : "Arabidopsis thaliana ESTs and FL-cDNAs downloaded from GenBank and mapped to the genome using MAKER optimized est2genome. Data provided courtesy of Yandell Lab.",
        	    "Source":"Yandell lab, Campbell et al. 2014",
@@ -219,7 +221,7 @@
          "compress" : 0,
          "label" : "MAKER_protein2genome",
          "type" : "CanvasFeatures",
-         "category" : "Alignment",
+         "category" : "F. Alignment",
          "metadata" : {
             "Description" : "Non-Arabidopsis Plant protein sequences from SwissProt plant (release 2011_12) were mapped to the genome using MAKER optimized protein2genome. Data provided courtesy of Yandell Lab.",
        	    "Source":"Yandell lab, Campbell et al. 2014, SwissProt 201112",
@@ -237,10 +239,10 @@
          "subParts" : [
             "match_part"
          ],
-         "key" : "SwissProt Non-Arabidopsis Plant Protein (201503)",
+         "key" : "SwissProt Non-Arabidopsis Plant Protein (2015 Mar)",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
-         "urlTemplate" : "tracks/Non-Arabidopsis plant protein (SwissProt 201503)/{refseq}/trackData.json",
+         "urlTemplate" : "tracks/Non-Arabidopsis plant protein (SwissProt 2015 Mar)/{refseq}/trackData.json",
          "compress" : 0,
          "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
@@ -249,7 +251,7 @@
        	    "URL":"<a href=ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/taxonomic_divisions/README>ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/taxonomic_divisions/README</a>"
          },
          "label" : "Non-Arabidopsis plant protein (SwissProt 201503)",
-         "category" : "Alignment",
+         "category" : "F. Alignment",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -287,9 +289,9 @@
          "key" : "TAIR10 - Protein Coding Gene Model",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
-         "urlTemplate" : "tracks/TAIR10_gene_models/{refseq}/trackData.json",
+         "urlTemplate" : "tracks/TAIR10_genes/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "TAIR10",
+         "category" : "C. TAIR10",
          "metadata" : {
             "Description" : "Shows the exon (boxes) and intron (lines) structure of each protein-coding transcript with direction of transcription indicated. The gene model confidence rankings are embedded in this track. Documentation for the ranking system can be found at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>",
        	    "Source":"TAIR10",
@@ -327,7 +329,7 @@
          },
          "label" : "TAIR10_transposons",
          "type" : "FeatureTrack",
-         "category" : "Repeat"
+         "category" : "G. Repeat"
       },
      {
          "style" : {
@@ -339,7 +341,7 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_Microarray_probes/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "Microarray",
+         "category" : "H. Microarray",
          "type" : "FeatureTrack",
          "metadata" : {
             "description" : "This genome array is based on the initial release of Arabidopsis genome in 2000 and subsequent TIGR reannotation."
@@ -365,7 +367,7 @@
          },
          "label" : "TAIR10_unconfirmed_exons",
          "type" : "FeatureTrack",
-         "category" : "TAIR10"
+         "category" : "C. TAIR10"
       },
       {
          "style" : {
@@ -398,7 +400,7 @@
          },
          "type" : "FeatureTrack",
          "label" : "TAIR10_pseudogenes",
-         "category" : "TAIR10"
+         "category" : "C. TAIR10"
       },
       {
          "style" : {
@@ -434,7 +436,7 @@
          },
          "label" : "TAIR10_ncRNAs",
          "type" : "FeatureTrack",
-         "category" : "TAIR10"
+         "category" : "C. TAIR10"
       },
       {
          "style" : {
@@ -455,7 +457,7 @@
          },
          "label" : "TAIR_SSRs",
          "type" : "FeatureTrack",
-         "category" : "Repeat"
+         "category" : "G. Repeat"
       },
       {
          "style" : {
@@ -476,7 +478,7 @@
          },
          "label" : "TAIR9_assembly_gaps",
          "type" : "FeatureTrack",
-         "category" : "Assembly"
+         "category" : "B. Assembly"
       },
       {
          "style" : {
@@ -500,7 +502,7 @@
          },
          "label" : "TAIR9_assembly_updates",
          "type" : "FeatureTrack",
-         "category" : "Assembly"
+         "category" : "B. Assembly"
       },
       {
          "style" : {
@@ -519,7 +521,7 @@
          },
          "label" : "TAIR9_Microarray_probes",
          "type" : "FeatureTrack",
-         "category" : "Microarray"
+         "category" : "H. Microarray"
       },
       {
          "style" : {
@@ -543,7 +545,7 @@
          },
          "label" : "TAIR9_AtProteome",
          "type" : "FeatureTrack",
-         "category" : "Proteomics"
+         "category" : "I. Proteomics"
       },
       {
          "style" : {
@@ -567,7 +569,7 @@
        	    "URL":"<a href=http://www.ncbi.nlm.nih.gov/pubmed/19098097>http://www.ncbi.nlm.nih.gov/pubmed/19098097</a>"
          },
          "type" : "FeatureTrack",
-         "category" : "Proteomics"
+         "category" : "I. Proteomics"
       },
      {
          "fmtDetailValue_VE" : "{variantEffect}",
@@ -579,9 +581,18 @@
                "iconClass" : "dijitLeaf",
                "content" : "function(track, feature, div){ return track.genotypeTable(track, feature, div) }",
                "action" : "contentDialog",
-               "label" : "View Variation Features"
+               "label" : "View Variation Features for {name}"
 	 },
          "menuTemplate" : [
+	                 {
+             "label" : "View details",
+			 },
+	                 {
+             "label" : "Zoom to this variation",
+           },
+            {
+             "label" : "Highlight this variation",
+           },
             {
                "iconClass" : "dijitLeaf",
                "content" : "function(track, feature, div){ return track.genotypeTable(track, feature, div) }",
@@ -594,7 +605,7 @@
          "maxFeatureScreenDensity" : 4,
          "urlTemplate" : "vcf/new_consequences_variation.vcf.gz",
          "fmtDetailField_VE" : "function(fieldname){ return 'Variant Effect' }",
-         "category" : "Variation",
+         "category" : "J. Variation",
          "metadata" : {
             "Description" : "Variation features from Affy_250k, Perlegen_1M, WTCHG and 1001 Genomes, with Ensembl identifiers",
        	    "Source":"Ensembl Arabidopsis vcf v26",
@@ -614,7 +625,7 @@
          "trackType" : null,
          "urlTemplate" : "tracks/SALK_tDNAs/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "Variation",
+         "category" : "J. Variation",
          "metadata" : {
        	    "Source":"O'Malley et al. (released to GenBank Dec 2014)"
          },
@@ -661,7 +672,7 @@
          "urlTemplate" : "tracks/TAIR9_tDNAs/{refseq}/trackData.json",
          "compress" : 0,
          "type" : "JBrowse/View/Track/CanvasFeatures",
-         "category" : "Variation",
+         "category" : "J. Variation",
          "label" : "TAIR9_tDNAs",
          "fmtDetailField_Length" : "{fmtDetailField_Length}",
           "fmtDetailValue_Name" : "{fmtDetailValue_Name}",
@@ -709,7 +720,7 @@
        	    "URL":"<a href=ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Variation_GFF/TAIR9_GFF3_polymorphisms.gff>ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Variation_GFF/TAIR9_GFF3_polymorphisms.gff</a>"
          },
          "type" : "FeatureTrack",
-         "category" : "Variation"
+         "category" : "J. Variation"
       },
      {
          "style" : {
@@ -727,7 +738,7 @@
          },
          "label" : "TAIR9_markers",
          "type" : "FeatureTrack",
-         "category" : "Variation"
+         "category" : "J. Variation"
       },
       {
           "style" : {
@@ -742,7 +753,7 @@
           "urlTemplate" : "tracks/RBP.protected.sites/{refseq}/trackData.json",
           "compress" : 0,
           "type": "JBrowse/View/Track/CanvasFeatures",
-          "category" : "Binding Site",
+          "category" : "K. Binding Site",
           "label" : "RBP.protected.sites",
           "metadata" : {
               "Description" : "RNA-binding protein protected sites (PPS) were detected using protein interaction profile sequencing (PIP-seq) on total nuclei from 10-day-old seedlings. A total of 61,632 PPSs were detected from two-replicate nuclear PIP-seq experiments, 64.7% of which overlap. Consolidation of two replicates yields 40,131 distinct sites which are presented in this track.",
@@ -752,31 +763,14 @@
           }
       }
    ],
-   "plugins" : {
-      "ComboTrackSelector" : {
-         "location" : "./plugins/ComboTrackSelector"
-      },
-      "EnsemblVariants" : {
-         "location" : "./plugins/EnsemblVariants"
-      },
-      "SeqLighter" : {
-         "location" : "./plugins/SeqLighter"
-      },
-      "Araport" : {
-         "location" : "./plugins/Araport"
-      }
-   },
    "names" : {
       "url" : "names/",
       "type" : "Hash"
    },
-   "include" : [
-      "functions/fmtDetail.conf"
-   ],
    "dataset_id" : "arabidopsis",
    "trackSelector" : {
       "type" : "Hierarchical",
-      "sortHierarchical": false
+      "sortHierarchical": true
    },
    "formatVersion" : 1
 }

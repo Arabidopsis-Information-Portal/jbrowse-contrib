@@ -585,13 +585,13 @@
 	 },
          "menuTemplate" : [
 	                 {
-             "label" : "View details",
+             "label" : "View details"
 			 },
 	                 {
-             "label" : "Zoom to this variation",
+             "label" : "Zoom to this variation"
            },
             {
-             "label" : "Highlight this variation",
+             "label" : "Highlight this variation"
            },
             {
                "iconClass" : "dijitLeaf",
@@ -637,13 +637,13 @@
              "fmtDetailValue_Comment" : "{Comment}",
              "menuTemplate" : [
             {
-             "label" : "View details",
+             "label" : "View details"
            },
             {
-             "label" : "Zoom to this transposable_element_insertion_site",
+             "label" : "Zoom to this transposable_element_insertion_site"
            },
             {
-             "label" : "Highlight this transposable_element_insertion_site",
+             "label" : "Highlight this transposable_element_insertion_site"
            },
             {
                "iconClass" : "dijitLeaf",
@@ -683,13 +683,13 @@
          },
 	           "menuTemplate" : [
         {
-         "label" : "View details",
+         "label" : "View details"
        },
         {
-         "label" : "Zoom to this transposable_element_insertion_site",
+         "label" : "Zoom to this transposable_element_insertion_site"
        },
         {
-         "label" : "Highlight this transposable_element_insertion_site",
+         "label" : "Highlight this transposable_element_insertion_site"
        },
             {
                "iconClass" : "dijitLeaf",
@@ -697,8 +697,8 @@
                "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
                "title" : "Check the availability of this T-DNA allele at ABRC"
-            },
-         ],
+            }
+         ]
       },
      {
          "style" : {
@@ -760,6 +760,111 @@
        	    "Source":"Gosai et al., 2015",
        	    "URL":"<a href=http://www.ncbi.nlm.nih.gov/pubmed/25557549>http://www.ncbi.nlm.nih.gov/pubmed/25557549</a>"
 
+          }
+      },
+      {
+          "style" : {
+              "pos_color": "{vista_color}",
+              "linkTemplate" : "{vista_browserLink}"
+          },
+          "key" : "Vista Plot: Ahalleri v1",
+          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+          "trackType" : null,
+          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+          "category" : "L. VISTA Plots",
+          "label" : "Vista_Ahalleri",
+          "metadata" : {
+              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis halleri version v1.0 release"
+          },
+          "query" : {
+              "vista_base_id" : 611,
+              "target_id" : 4336,
+              "target_run" : 36799
+          }
+      },
+      {
+          "style" : {
+              "pos_color": "{vista_color}",
+              "linkTemplate" : "{vista_browserLink}"
+          },
+          "key" : "Vista Plot: Alyrata v1",
+          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+          "trackType" : null,
+          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+          "category" : "L. VISTA Plots",
+          "label" : "Vista_Alyrata",
+          "metadata" : {
+              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis lyrata genome October 2008 release"
+          },
+          "query" : {
+              "vista_base_id" : 611,
+              "target_id" : 962,
+              "target_run" : 660
+          }
+      },
+      {
+          "style" : {
+              "pos_color": "{vista_color}",
+              "linkTemplate" : "{vista_browserLink}"
+          },
+          "key" : "Vista Plot: BrapaFPsc v1",
+          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+          "trackType" : null,
+          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+          "category" : "L. VISTA Plots",
+          "label" : "Vista_BrapaFPsc",
+          "metadata" : {
+              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Brassica rapa FPsc version v1.0 release"
+          },
+          "query" : {
+              "vista_base_id" : 611,
+              "target_id" : 4334,
+              "target_run" : 36820
+          }
+      },
+      {
+          "style" : {
+              "pos_color": "{vista_color}",
+              "linkTemplate" : "{vista_browserLink}"
+          },
+          "key" : "Vista Plot: Bstricta v1",
+          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+          "trackType" : null,
+          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+          "category" : "L. VISTA Plots",
+          "label" : "Vista_Bstricta",
+          "metadata" : {
+              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Boechera stricta version v1.0 release"
+          },
+          "query" : {
+              "vista_base_id" : 611,
+              "target_id" : 4333,
+              "target_run" : 34336
+          }
+      },
+      {
+          "style" : {
+              "pos_color": "{vista_color}",
+              "linkTemplate" : "{vista_browserLink}"
+          },
+          "key" : "Vista Plot: Crubella v1",
+          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+          "trackType" : null,
+          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+          "category" : "L. VISTA Plots",
+          "label" : "Vista_Crubella",
+          "metadata" : {
+              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Capsella rubella genome version 1.0 release"
+          },
+          "query" : {
+              "vista_base_id" : 611,
+              "target_id" : 2005,
+              "target_run" : 21890
           }
       }
    ],

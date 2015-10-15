@@ -333,25 +333,6 @@
          "type" : "FeatureTrack",
          "category" : "G. Repeat"
       },
-     {
-         "style" : {
-            "className" : "generic_part_a",
-            "arrowheadClass" : null
-         },
-         "key" : "Microarray ATH1-121501 probes",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : null,
-         "urlTemplate" : "tracks/TAIR9_Microarray_probes/{refseq}/trackData.json",
-         "compress" : 0,
-         "category" : "H. Microarray",
-         "type" : "FeatureTrack",
-         "metadata" : {
-            "Description" : "This genome array is based on the initial release of Arabidopsis genome in 2000 and subsequent TIGR reannotation.",
-            "Source" : "Affymetrix GeneChip® Arabidopsis ATH1 Genome Array",
-            "URL" : "http://www.affymetrix.com/catalog/131416/AFFY/Arabidopsis+ATH1+Genome+Array"
-         },
-         "label" : "TAIR9_Microarray_probes"
-      },
       {
          "style" : {
             "className" : "exon"

@@ -71,7 +71,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supporting that junction",
-            "Source" : "Araport11",
+            "Source" : "Araport11 splice-junction coverage",
             "URL" : "https://www.araport.org/data/araport11/methods",
             "Tissue" : "Aerial parts"
          },

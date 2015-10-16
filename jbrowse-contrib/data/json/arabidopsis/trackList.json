@@ -12,7 +12,7 @@
          "label" : "TAIR10_genome",
          "metadata" : {
             "Description" : "TAIR10 reference genome sequence",
-            "Source" : "TAIR10",
+            "Source" : "TAIR10 (released 11/2010)",
             "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
          },
          "key" : "Genome Reference (TAIR10)"
@@ -47,7 +47,7 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
+               "URL" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine Gene Report: {name}",
                "title" : "Thalemine Gene Report: {name}"
@@ -197,7 +197,7 @@
          "compress" : 0,
          "label" : "MAKER_EST_FLcDNA_est2genome",
          "type" : "CanvasFeatures",
-         "category" : "F. Alignment",
+         "category" : "F. EST and Protein Alignments",
          "metadata" : {
             "Description" : "Arabidopsis thaliana ESTs and FL-cDNAs downloaded from GenBank and mapped to the genome using MAKER optimized est2genome. Data provided courtesy of Yandell Lab.",
        	    "Source" : "Yandell lab, Campbell et al. 2014",
@@ -223,7 +223,7 @@
          "compress" : 0,
          "label" : "MAKER_protein2genome",
          "type" : "CanvasFeatures",
-         "category" : "F. Alignment",
+         "category" : "F. EST and Protein Alignments",
          "metadata" : {
             "Description" : "Non-Arabidopsis Plant protein sequences from SwissProt plant (release 2011_12) were mapped to the genome using MAKER optimized protein2genome. Data provided courtesy of Yandell Lab.",
        	    "Source" : "Yandell lab, Campbell et al. 2014, SwissProt 201112",
@@ -253,7 +253,7 @@
        	    "URL" : "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/taxonomic_divisions/README"
          },
          "label" : "Non-Arabidopsis plant protein (SwissProt 201503)",
-         "category" : "F. Alignment",
+         "category" : "F. EST and Protein Alignments",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -276,7 +276,7 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
+               "URL" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine Gene Report: {name}",
                "title" : "Thalemine Gene Report: {name}"
@@ -313,7 +313,7 @@
          "menuTemplate" : [
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
+               "URL" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine Transposon Report: {name}",
                "title" : "Thalemine Transposon Report: {name}"
@@ -367,7 +367,7 @@
          "menuTemplate" : [
             {
                "iconClass" : "dijitIconDatabase",
-               "url" : "/thalemine/portal.do?externalids={name}",
+               "URL" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine Gene Report: {name}",
                "title" : "Thalemine Gene Report: {name}"
@@ -403,7 +403,7 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
+               "URL" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine ncRNA Report: {name}",
                "title" : "Thalemine ncRNA Report: {name}"
@@ -458,7 +458,7 @@
          "compress" : 0,
          "metadata" : {
             "Description" : "Shows the regions where greater than four Ns are included in the current golden path sequence.",
-            "source" : "TAIR9 data (released 07/2010)",
+            "Source" : "TAIR9 data (released 07/2010)",
             "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/tair9_assembly_updates.gff"
          },
          "label" : "TAIR9_assembly_gaps",
@@ -592,8 +592,8 @@
          "fmtDetailField_VE" : "function(fieldname){ return 'Variant Effect' }",
          "category" : "J. Variation",
          "metadata" : {
-            "Description" : "Variation features from Affy_250k, Perlegen_1M, WTCHG and 1001 Genomes, with Ensembl identifiers",
-       	    "Source" : "Ensembl Arabidopsis vcf v26",
+            "Description" : "Ensembl variants from 1001 Arabidopsis Genomes project. Variant metadata retrieved via Ensembl REST Web Services.",
+       	    "Source" : "Real-time from Ensembl for metadata, static VCF",
        	    "URL" : "ftp://ftp.ensemblgenomes.org/pub/release-26/plants/vcf/arabidopsis_thaliana"
          },
          "label" : "Consequences_Variation",
@@ -636,14 +636,14 @@
             {
                "iconClass" : "dijitLeaf",
                "label" : "iSect Primer!",
-               "url" : "http://signal.salk.edu/cgi-bin/tdnaexpress?JOB=Primer&LIST={name}",
+               "URL" : "http://signal.salk.edu/cgi-bin/tdnaexpress?JOB=Primer&LIST={name}",
                "action" : "iframeDialog",
                "title" : "iSect Primer"
             },
             {
                "iconClass" : "dijitLeaf",
                "label" : "Order from ABRC via TAIR",
-               "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
+               "URL" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
                "title" : "Check the availability of this T-DNA allele at ABRC"
             }
@@ -683,7 +683,7 @@
             {
                "iconClass" : "dijitLeaf",
                "label" : "Order from ABRC via TAIR",
-               "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
+               "URL" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
                "title" : "Check the availability of this T-DNA allele at ABRC"
             }
@@ -765,7 +765,7 @@
           "label" : "Vista_Ahalleri",
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis halleri version v1.0 release",
-              "Source" : "Frazer K.A. et al. 2004",
+              "Source" : "Real-time from Phytozome",
               "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
           },
           "query" : {
@@ -788,7 +788,7 @@
           "label" : "Vista_Alyrata",
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis lyrata genome October 2008 release",
-              "Source" : "Frazer K.A. et al. 2004",
+              "Source" : "Real-time from Phytozome",
               "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
           },
           "query" : {
@@ -811,7 +811,7 @@
           "label" : "Vista_BrapaFPsc",
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Brassica rapa FPsc version v1.0 release",
-              "Source" : "Frazer K.A. et al. 2004",
+              "Source" : "Real-time from Phytozome",
               "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
           },
           "query" : {
@@ -834,7 +834,7 @@
           "label" : "Vista_Bstricta",
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Boechera stricta version v1.0 release",
-              "Source" : "Frazer K.A. et al. 2004",
+              "Source" : "Real-time from Phytozome",
               "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
           },
           "query" : {
@@ -857,8 +857,8 @@
           "label" : "Vista_Crubella",
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Capsella rubella genome version 1.0 release",
-              "Source" : "Frazer K.A. et al. 2004",
-              "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
+              "Source" : "Real-time from Phytozome",
+              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
           },
           "query" : {
               "vista_base_id" : 611,
@@ -868,7 +868,7 @@
       }
    ],
    "names" : {
-      "url" : "names/",
+      "URL" : "names/",
       "type" : "Hash"
    },
    "dataset_id" : "arabidopsis",

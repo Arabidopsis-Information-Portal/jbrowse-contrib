@@ -61,7 +61,7 @@
          "label" : "TAIR10_loci",
          "metadata" : {
             "Description" : "The total transcribed region of an annotated gene including coding and non-coding genes. The arrow indicates the direction of transcription.",
-       	    "Source" : "TAIR10",
+       	    "Source" : "TAIR10 (released 11/2010)",
        	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
          },
          "category" : "C. TAIR10",
@@ -296,7 +296,7 @@
          "category" : "C. TAIR10",
          "metadata" : {
             "Description" : "Shows the exon (boxes) and intron (lines) structure of each protein-coding transcript with direction of transcription indicated. The gene model confidence rankings are embedded in this track. Documentation for the ranking system can be found at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>",
-       	    "Source" : "TAIR10",
+       	    "Source" : "TAIR10 (released 11/2010)",
        	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
          },
          "label" : "TAIR10_genes",
@@ -347,7 +347,7 @@
          "compress" : 0,
          "metadata" : {
             "Description" : "Shows the exons in TAIR10 which are neither supported by experimental evidence nor bioinformatic analysis. The detailed scoring strategy is available at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>",
-            "Source" : "TAIR10",
+            "Source" : "TAIR10 (released 11/2010)",
             "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
          },
          "label" : "TAIR10_unconfirmed_exons",
@@ -380,7 +380,7 @@
          "compress" : 0,
          "metadata" : {
             "Description" : "Shows the pseudogene transcript.",
-            "Source" : "TAIR10",
+            "Source" : "TAIR10 (released 11/2010)",
             "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
          },
          "type" : "FeatureTrack",
@@ -416,7 +416,7 @@
          "compress" : 0,
          "metadata" : {
             "Description" : "Shows the non-coding RNA transcripts.",
-            "Source" : "TAIR10",
+            "Source" : "TAIR10 (released 11/2010)",
             "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
          },
          "label" : "TAIR10_ncRNAs",
@@ -437,7 +437,7 @@
          "compress" : 0,
          "metadata" : {
             "Description" : "Regions of tandem repeats including  microsatellite, minisatellite, and satellite, as computed using Tandem Repeats Finder v4.04.",
-            "Source" : "TAIR10",
+            "Source" : "TAIR10 (released 11/2010)",
        	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR10/TAIR_GFF3_ssrs.gff"
          },
          "label" : "TAIR_SSRs",

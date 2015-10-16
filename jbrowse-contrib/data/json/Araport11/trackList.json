@@ -615,7 +615,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Aerial parts"
          },
@@ -634,7 +634,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Shoot Apical Meristem"
          },
@@ -653,7 +653,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Dark-grown seedling"
          },
@@ -672,7 +672,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Leaf"
          },
@@ -691,7 +691,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Light-grown seedling"
          },
@@ -710,7 +710,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Pollen"
          },
@@ -729,7 +729,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Root Apical Meristem"
          },
@@ -748,7 +748,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Receptacle"
          },
@@ -767,7 +767,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Root"
          },
@@ -786,7 +786,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Stage 12 Flower"
          },
@@ -805,7 +805,7 @@
          "metadata" : {
             "Species" : "Arabidopsis thaliana Col-0",
             "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "Public RNA-seq data from NCBI SRA",
+            "Source" : "Public RNA-seq data from NCBI SRA used in Araport11",
             "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
             "Tissue" : "Carpel"
          },

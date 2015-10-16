@@ -13,9 +13,22 @@
          },
          "menuTemplate" : [
             {
-               "iconClass" : "dijitIconDatabase",
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Brief Description</strong></td><td>{full_name}</td></tr><tr><td><strong>Symbol</strong></td><td>{symbol}</td></tr><tr><td><strong>Alias</strong></td><td>{alias}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr></table>",
                "action" : "contentDialog",
+               "label" : "Gene Info: {name}",
+               "title" : "Gene Info: {name}"
+            },
+            {
+               "iconClass" : "dijitLeaf",
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "action" : "iframeDialog",
+               "label" : "Thalemine Gene Report: {name}",
+               "title" : "Thalemine Gene Report: {name}"
+            },
+            {
+               "iconClass" : "dijitIconDatabase",
                "content" : "function(track,feature,div ){ return SequenceViewer(track,feature,div)}",
+               "action" : "contentDialog",
                "label" : "View Sequence"
             }
          ],
@@ -39,6 +52,18 @@
             "className" : "feature",
             "label" : "id"
          },
+         "menuTemplate" : [
+            {
+               "label" : "Locus: {name} {seq_id}:{start}..{end}"
+            },
+            {
+               "iconClass" : "dijitLeaf",
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "action" : "iframeDialog",
+               "label" : "Thalemine Gene Report: {name}",
+               "title" : "Thalemine Gene Report: {name}"
+            }
+         ],
          "key" : "Araport11 Locus",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",

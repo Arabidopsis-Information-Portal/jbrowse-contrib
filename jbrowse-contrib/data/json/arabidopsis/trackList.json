@@ -47,7 +47,7 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "URL" : "/thalemine/portal.do?externalids={name}",
+               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine Gene Report: {name}",
                "title" : "Thalemine Gene Report: {name}"
@@ -276,7 +276,7 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "URL" : "/thalemine/portal.do?externalids={name}",
+               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine Gene Report: {name}",
                "title" : "Thalemine Gene Report: {name}"
@@ -313,7 +313,7 @@
          "menuTemplate" : [
             {
                "iconClass" : "dijitLeaf",
-               "URL" : "/thalemine/portal.do?externalids={name}",
+               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine Transposon Report: {name}",
                "title" : "Thalemine Transposon Report: {name}"
@@ -367,7 +367,7 @@
          "menuTemplate" : [
             {
                "iconClass" : "dijitIconDatabase",
-               "URL" : "/thalemine/portal.do?externalids={name}",
+               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine Gene Report: {name}",
                "title" : "Thalemine Gene Report: {name}"
@@ -403,7 +403,7 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "URL" : "/thalemine/portal.do?externalids={name}",
+               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
                "label" : "Thalemine ncRNA Report: {name}",
                "title" : "Thalemine ncRNA Report: {name}"
@@ -636,14 +636,14 @@
             {
                "iconClass" : "dijitLeaf",
                "label" : "iSect Primer!",
-               "URL" : "http://signal.salk.edu/cgi-bin/tdnaexpress?JOB=Primer&LIST={name}",
+               "url" : "http://signal.salk.edu/cgi-bin/tdnaexpress?JOB=Primer&LIST={name}",
                "action" : "iframeDialog",
                "title" : "iSect Primer"
             },
             {
                "iconClass" : "dijitLeaf",
                "label" : "Order from ABRC via TAIR",
-               "URL" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
+               "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
                "title" : "Check the availability of this T-DNA allele at ABRC"
             }
@@ -683,7 +683,7 @@
             {
                "iconClass" : "dijitLeaf",
                "label" : "Order from ABRC via TAIR",
-               "URL" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
+               "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
                "title" : "Check the availability of this T-DNA allele at ABRC"
             }
@@ -868,7 +868,7 @@
       }
    ],
    "names" : {
-      "URL" : "names/",
+      "url" : "names/",
       "type" : "Hash"
    },
    "dataset_id" : "arabidopsis",

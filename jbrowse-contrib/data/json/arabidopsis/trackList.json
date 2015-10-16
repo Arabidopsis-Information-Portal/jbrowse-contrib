@@ -766,7 +766,7 @@
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis halleri version v1.0 release",
               "Source" : "Real-time from Phytozome",
-              "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
+              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
           },
           "query" : {
               "vista_base_id" : 611,
@@ -789,7 +789,7 @@
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis lyrata genome October 2008 release",
               "Source" : "Real-time from Phytozome",
-              "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
+              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
           },
           "query" : {
               "vista_base_id" : 611,
@@ -812,7 +812,7 @@
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Brassica rapa FPsc version v1.0 release",
               "Source" : "Real-time from Phytozome",
-              "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
+              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
           },
           "query" : {
               "vista_base_id" : 611,
@@ -835,7 +835,7 @@
           "metadata" : {
               "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Boechera stricta version v1.0 release",
               "Source" : "Real-time from Phytozome",
-              "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/15215394"
+              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
           },
           "query" : {
               "vista_base_id" : 611,

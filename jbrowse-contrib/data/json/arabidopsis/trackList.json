@@ -602,14 +602,17 @@
       {
          "fmtDetailValue_Name" : "{fmtDetailValue_Name}",
          "style" : {
-            "className" : "triangle hgred invert",
+            "color" : "fuchsia",
             "arrowheadClass" : "none"
+         },
+         "histogram" : {
+             "color" : "fuchsia"
          },
          "key" : "TDNA-seq (O'Malley R et al. 2014)",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/SALK_tDNAs/{refseq}/trackData.json",
-         "displayMode": "compact",
+         "displayMode": "normal",
          "compress" : 0,
          "category" : "J. Variation",
          "metadata" : {
@@ -618,6 +621,7 @@
             "URL" : "http://signal.salk.edu/TDNA-Seq/"
          },
          "type" : "JBrowse/View/Track/CanvasFeatures",
+         "glyph" : "JBrowse/View/FeatureGlyph/Box",
          "label" : "SALK_tDNAs",
          "fmtDetailField_Length" : "{fmtDetailField_Length}",
          "fmtDetailField_Id" : "{fmtDetailField_Id}",
@@ -651,16 +655,19 @@
       },
       {
          "style" : {
-            "className" : "triangle hgred invert",
-            "_defaultLabelScale" : 500
+            "color": "purple"
+         },
+         "histogram" : {
+             "color" : "purple"
          },
          "key" : "TDNA Classical (TAIR9)",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_tDNAs/{refseq}/trackData.json",
          "compress" : 0,
-         "displayMode": "compact",
+         "displayMode": "normal",
          "type" : "JBrowse/View/Track/CanvasFeatures",
+         "glyph" : "JBrowse/View/FeatureGlyph/Box",
          "category" : "J. Variation",
          "label" : "TAIR9_tDNAs",
          "fmtDetailField_Length" : "{fmtDetailField_Length}",

@@ -78,7 +78,7 @@
             "type" : "JBrowse/View/Track/CanvasFeatures",
             "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
             "metadata" : {
-                "Description" : "intergenic regions; distal promoter elements; most upstream region of promoters",
+                "Description" : "intergenic regions; distal promoter elements; H3K27me3-enriched",
                 "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
                 "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
             },

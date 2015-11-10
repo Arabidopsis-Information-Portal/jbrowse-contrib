@@ -1,0 +1,202 @@
+{
+    "tracks" : [
+        {
+            "style" : {
+                "color" : "red"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 1",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "open chromatin; transcribed regions and transcription start sites (TSSs)",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_1",
+            "query" : {
+                "chromatin_state" : 1
+            }
+        },
+        {
+            "style" : {
+                "color" : "salmon"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 2",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "intergenic regions; proximal promoter elements",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_2",
+            "query" : {
+                "chromatin_state" : 2
+            }
+        },
+        {
+            "style" : {
+                "color" : "magenta"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 3",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "open chromatin; highly depleted in Polycomb marks; transcription elongation signature",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_3",
+            "query" : {
+                "chromatin_state" : 3
+            }
+        },
+        {
+            "style" : {
+                "color" : "gold"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 4",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "intergenic regions; distal promoter elements; most upstream region of promoters",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_4",
+            "query" : {
+                "chromatin_state" : 4
+            }
+        },
+        {
+            "style" : {
+                "color" : "gray"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 5",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "intergenic regions; typical Polycomb-regulated chromatin",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_5",
+            "query" : {
+                "chromatin_state" : 5
+            }
+        },
+        {
+            "style" : {
+                "color" : "brown"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 6",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "open chromatin; intragenic",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_6",
+            "query" : {
+                "chromatin_state" : 6
+            }
+        },
+        {
+            "style" : {
+                "color" : "green"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 7",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "open chromatin; intragenic",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_7",
+            "query" : {
+                "chromatin_state" : 7
+            }
+        },
+        {
+            "style" : {
+                "color" : "skyblue"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 8",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "AT-rich heterochromatin; intergenic regions and transposon elements",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_8",
+            "query" : {
+                "chromatin_state" : 8
+            }
+        },
+        {
+            "style" : {
+                "color" : "navy"
+            },
+            "displayMode": "compact",
+            "key" : "Chromatin State 9",
+            "storeClass" : "Araport/Store/SeqFeature/REST",
+            "baseUrl" : "https://api.araport.org/community/v0.3/cbmso/chromatin_states_to_jbrowse_v0.2",
+            "compress" : 0,
+            "type" : "JBrowse/View/Track/CanvasFeatures",
+            "category" : "M. Motifs / Chromatin States (Sequeira-Mendes et al. 2014)",
+            "metadata" : {
+                "Description" : "GC-rich heterochromatin; pericentromeric regions; intergenic regions and transposable elements",
+                "Source" : "Sequeira-Mendes, et al. 2014 (Plant Cell)",
+                "URL" : "http://www.plantcell.org/content/early/2014/06/11/tpc.114.124578"
+            },
+            "glyph" : "JBrowse/View/FeatureGlyph/Box",
+            "label" : "chromatin_state_9",
+            "query" : {
+                "chromatin_state" : 9
+            }
+        }
+    ]
+}

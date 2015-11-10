@@ -763,7 +763,7 @@
               "pos_color": "{vista_color}",
               "linkTemplate" : "{vista_browserLink}"
           },
-          "key" : "Vista Plot: Ahalleri v1",
+          "key" : "Vista Plot:Ahalleri v1 (Phytozome)",
           "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
           "trackType" : null,
           "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
@@ -786,7 +786,7 @@
               "pos_color": "{vista_color}",
               "linkTemplate" : "{vista_browserLink}"
           },
-          "key" : "Vista Plot: Alyrata v1",
+          "key" : "Vista Plot: Alyrata v1 (Phytozome)",
           "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
           "trackType" : null,
           "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
@@ -809,7 +809,7 @@
               "pos_color": "{vista_color}",
               "linkTemplate" : "{vista_browserLink}"
           },
-          "key" : "Vista Plot: BrapaFPsc v1",
+          "key" : "Vista Plot: BrapaFPsc v1 (Phytozome)",
           "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
           "trackType" : null,
           "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
@@ -832,7 +832,7 @@
               "pos_color": "{vista_color}",
               "linkTemplate" : "{vista_browserLink}"
           },
-          "key" : "Vista Plot: Bstricta v1",
+          "key" : "Vista Plot: Bstricta v1 (Phytozome)",
           "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
           "trackType" : null,
           "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
@@ -855,7 +855,7 @@
               "pos_color": "{vista_color}",
               "linkTemplate" : "{vista_browserLink}"
           },
-          "key" : "Vista Plot: Crubella v1",
+          "key" : "Vista Plot: Crubella v1 (Phytozome)",
           "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
           "trackType" : null,
           "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",

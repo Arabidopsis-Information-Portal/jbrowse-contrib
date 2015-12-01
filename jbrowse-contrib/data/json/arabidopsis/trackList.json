@@ -646,10 +646,10 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "label" : "Order from ABRC via TAIR",
+               "label" : "Order from ABRC/NASC via TAIR",
                "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
-               "title" : "Check the availability of this T-DNA allele at ABRC"
+               "title" : "Check the availability of this T-DNA allele at ABRC/NASC via TAIR"
             }
          ]
       },
@@ -689,10 +689,10 @@
        },
             {
                "iconClass" : "dijitLeaf",
-               "label" : "Order from ABRC via TAIR",
+               "label" : "Order from ABRC/NASC via TAIR",
                "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
-               "title" : "Check the availability of this T-DNA allele at ABRC"
+               "title" : "Check the availability of this T-DNA allele at ABRC/NASC via TAIR"
             }
          ]
       },

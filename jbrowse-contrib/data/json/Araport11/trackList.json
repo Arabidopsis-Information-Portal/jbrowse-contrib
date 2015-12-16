@@ -39,10 +39,10 @@
          "urlTemplate" : "tracks/Araport11_gene_models/{refseq}/trackData.json",
          "compress" : 0,
          "type" : "FeatureTrack",
-         "category" : "A. Araport11 / Pre-Release 2 (Oct 2015) / Annotation",
+         "category" : "A. Araport11 / Pre-Release 3 (Dec 2015) / Annotation",
          "metadata" : {
-              "Description" : "Protein coding gene models annotated as part of the Araport11 Pre-Release 2 (Oct 2015)",
-              "Source" : "Araport11 Pre-release 2 (Oct 2015)",
+              "Description" : "Protein coding gene models annotated as part of the Araport11 Pre-Release 3 (Dec 2015)",
+              "Source" : "Araport11 Pre-Release 3 (Dec 2015)",
               "URL" : "https://www.araport.org/data/araport11"
           },
          "label" : "Araport11_gene_models"
@@ -72,10 +72,10 @@
          "label" : "Araport11_Loci",
          "metadata" : {
               "Description" : "Araport11 gene loci supplemented with TAIR10 pseudogenes, TE genes and ncRNA loci",
-              "Source" : "Araport11 Pre-release 2 (Oct 2015)",
+              "Source" : "Araport11 Pre-Release 3 (Dec 2015)",
               "URL" : "https://www.araport.org/data/araport11"
           },
-         "category" : "A. Araport11 / Pre-Release 2 (Oct 2015) / Annotation",
+         "category" : "A. Araport11 / Pre-Release 3 (Dec 2015) / Annotation",
          "type" : "JBrowse/View/Track/CanvasFeatures",
          "glyph" : "JBrowse/View/FeatureGlyph/Alignment"
       },
@@ -849,12 +849,12 @@
          "urlTemplate" : "tracks/Araport11.novel.20151015/{refseq}/trackData.json",
          "compress" : 0,
          "label" : "Araport11.novel.20151015",
-         "category" : "A. Araport11 / Pre-Release 2 (Oct 2015) / Novel Transcribed Regions",
+         "category" : "A. Araport11 / Pre-Release 3 (Dec 2015) / Novel Transcribed Regions",
          "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
              "Species" : "Arabidopsis thaliana Col-0",
              "Description" : "Novel transcripts assembled from the 113 RNA-seq data sets",
-             "Source" : "Araport11 Pre-Release 2 (Oct 2015)",
+             "Source" : "Araport11 Pre-Release 3 (Dec 2015)",
              "URL" : "https://www.araport.org/data/araport11/methods",
              "Tissue" : "11 tissues used in Araport11"
          },

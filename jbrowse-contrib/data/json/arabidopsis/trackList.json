@@ -600,6 +600,20 @@
          "type" : "EnsemblVariants/View/Track/CanvasVariants"
       },
       {
+         "label" : "1001genomes_snp-short-indel_only",
+         "key" : "1001 Genomes (1001genomes.org)",
+         "storeClass" : "JBrowse/Store/SeqFeature/VCFTabix",
+         "urlTemplate" : "tracks/vcf/1001genomes_snp-short-indel_only_ACGTN_v3.1.snpeff.vcf.gz",
+         "category" : "J. Variation",
+         "chunkSizeLimit" : 10000000,
+	 "metadata" : {
+	     "Description" : "1001 Genomes Variants from the 1001genomes.org website. Genotype Accession name resolved against GMI/master_accession_list webservice",
+             "Source" : "VCF from 1001genomes.org",
+	     "URL" : "http://1001genomes.org"
+	 },
+         "type" : "1001GenomesVariants/View/Track/CanvasVariants"
+      },
+      {
          "fmtDetailValue_Name" : "{fmtDetailValue_Name}",
          "style" : {
             "color" : "fuchsia",
@@ -646,10 +660,10 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "label" : "Order from ABRC/NASC via TAIR",
+               "label" : "Order from ABRC via TAIR",
                "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
-               "title" : "Check the availability of this T-DNA allele at ABRC/NASC via TAIR"
+               "title" : "Check the availability of this T-DNA allele at ABRC"
             }
          ]
       },
@@ -689,10 +703,10 @@
        },
             {
                "iconClass" : "dijitLeaf",
-               "label" : "Order from ABRC/NASC via TAIR",
+               "label" : "Order from ABRC via TAIR",
                "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
-               "title" : "Check the availability of this T-DNA allele at ABRC/NASC via TAIR"
+               "title" : "Check the availability of this T-DNA allele at ABRC"
             }
          ]
       },

@@ -6,78 +6,181 @@
             "subfeatureClasses" : {
                "three_prime_UTR" : "transcript-UTR",
                "exon" : "transcript-exon",
-               "five_prime_UTR" : "transcript-UTR",
-               "CDS" : "transcript-CDS"
+               "CDS" : "transcript-CDS",
+               "five_prime_UTR" : "transcript-UTR"
             },
-            "label" : "id, name"
+            "arrowheadClass" : "arrowhead",
+            "label" : "id, name",
+            "centerChildrenVertically" : true
          },
          "menuTemplate" : [
             {
-               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Brief Description</strong></td><td>{full_name}</td></tr><tr><td><strong>Symbol</strong></td><td>{symbol}</td></tr><tr><td><strong>Alias</strong></td><td>{alias}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr></table>",
                "action" : "contentDialog",
-               "label" : "Gene Info: {name}",
-               "title" : "Gene Info: {name}"
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{id}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Brief Description</strong></td><td>{full_name}</td></tr><tr><td><strong>Symbol</strong></td><td>{symbol}</td></tr><tr><td><strong>Alias</strong></td><td>{alias}</td></tr><tr><td><strong>Curator Summary</strong></td><td>{curator_summary}</td></tr><tr><td><strong>Computational Description</strong></td><td>{computational_description}</td></tr></table>",
+               "title" : "Gene Info: {id}",
+               "label" : "Gene Info: {id}"
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={id}",
+               "title" : "Thalemine Gene Report: {id}",
+               "label" : "Thalemine Gene Report: {id}"
             },
             {
                "iconClass" : "dijitIconDatabase",
-               "content" : "function(track,feature,div ){ return SequenceViewer(track,feature,div)}",
                "action" : "contentDialog",
+               "content" : "function(track,feature,div ){ return SequenceViewer(track,feature,div)}",
                "label" : "View Sequence"
             }
          ],
-         "key" : "Araport11 Protein Coding Genes",
-         "noExport" : true,
+         "key" : "Araport11 - Protein Coding Genes",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/Araport11_gene_models/{refseq}/trackData.json",
          "compress" : 0,
-         "type" : "FeatureTrack",
-         "category" : "A. Araport11 / Pre-Release 3 (Dec 2015) / Annotation",
+         "label" : "Araport11_gene_models",
          "metadata" : {
-              "Description" : "Protein coding gene models annotated as part of the Araport11 Pre-Release 3 (Dec 2015)",
-              "Source" : "Araport11 Pre-Release 3 (Dec 2015)",
-              "URL" : "https://www.araport.org/data/araport11"
-          },
-         "label" : "Araport11_gene_models"
+            "URL" : "https://www.araport.org/data/araport11",
+            "Source" : "Araport11 Release (Jun 2016)",
+            "Description" : "Protein coding gene models annotated as part of the Araport11 Release (Jun 2016)"
+         },
+         "category" : "Araport Data / Araport11 / Annotation (Jun 2016)",
+         "type" : "FeatureTrack"
       },
       {
          "style" : {
             "className" : "feature",
-            "label" : "id"
+            "label" : "id",
+	    "description" : "note, description, locus_type"
          },
          "menuTemplate" : [
             {
-               "label" : "Locus: {name} {seq_id}:{start}..{end}"
+               "label" : "Locus: {id} {seq_id}:{start}..{end}"
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={id}",
+               "title" : "Thalemine Gene Report: {id}",
+               "label" : "Thalemine Gene Report: {id}"
             }
          ],
-         "key" : "Araport11 Locus",
+         "key" : "Araport11 - Gene Locus",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Araport11_Loci/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "Araport11_Loci",
-         "metadata" : {
-              "Description" : "Araport11 gene loci supplemented with TAIR10 pseudogenes, TE genes and ncRNA loci",
-              "Source" : "Araport11 Pre-Release 3 (Dec 2015)",
-              "URL" : "https://www.araport.org/data/araport11"
-          },
-         "category" : "A. Araport11 / Pre-Release 3 (Dec 2015) / Annotation",
+         "category" : "Araport Data / Araport11 / Annotation (Jun 2016)",
          "type" : "JBrowse/View/Track/CanvasFeatures",
+         "metadata" : {
+            "URL" : "https://www.araport.org/data/araport11",
+            "Source" : "Araport11 Release (Jun 2016)",
+            "Description" : "Araport11 Protein-coding, Transposable-element, and Non-coding gene loci"
+         },
+         "label" : "Araport11_Loci",
          "glyph" : "JBrowse/View/FeatureGlyph/Alignment"
+      },
+      {
+         "style" : {
+            "className" : "transcript",
+            "subfeatureClasses" : {
+               "exon" : "transcript-exon"
+            }
+         },
+         "key" : "Araport11 - Non-Coding RNA",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : "JBrowse/View/Track/HTMLFeatures",
+         "urlTemplate" : "tracks/Araport11_ncRNAs/{refseq}/trackData.json",
+         "compress" : 0,
+         "category" : "Araport Data / Araport11 / Annotation (Jun 2016)",
+         "label" : "Araport11_ncRNAs",
+         "metadata" : {
+            "URL" : "https://www.araport.org/data/araport11",
+            "Source" : "Araport11 Release (Jun 2016)",
+            "Description" : "Araport11 Non-Coding RNA genes"
+         },
+         "type" : "JBrowse/View/Track/HTMLFeatures"
+      },
+      {
+         "style" : {
+            "className" : "transcript",
+            "subfeatureClasses" : {
+               "exon" : "transcript-exon"
+            }
+         },
+         "key" : "Araport11 - Novel Transcribed Regions",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : "JBrowse/View/Track/HTMLFeatures",
+         "urlTemplate" : "tracks/Araport11_NTRs/{refseq}/trackData.json",
+         "compress" : 0,
+         "category" : "Araport Data / Araport11 / Annotation (Jun 2016)",
+         "label" : "Araport11_NTRs",
+         "metadata" : {
+            "URL" : "https://www.araport.org/data/araport11",
+            "Source" : "Araport11 Release (Jun 2016)",
+            "Description" : "Araport11 Novel Transcribed Region features"
+         },
+         "type" : "JBrowse/View/Track/HTMLFeatures"
+      },
+      {
+         "style" : {
+            "className" : "transcript",
+            "subfeatureClasses" : {
+               "exon" : "transcript-exon"
+            }
+         },
+         "key" : "Araport11 - Pseudogenes",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : "JBrowse/View/Track/HTMLFeatures",
+         "urlTemplate" : "tracks/Araport11_pseudogenes/{refseq}/trackData.json",
+         "compress" : 0,
+         "category" : "Araport Data / Araport11 / Annotation (Jun 2016)",
+         "label" : "Araport11_pseudogenes",
+         "metadata" : {
+            "URL" : "https://www.araport.org/data/araport11",
+            "Source" : "Araport11 Release (Jun 2016)",
+            "Description" : "Araport11 Pseudogene features"
+         },
+         "type" : "JBrowse/View/Track/HTMLFeatures"
+      },
+      {
+         "style" : {
+            "className" : "feature"
+         },
+         "key" : "Araport11 - Upstream ORFs",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : "JBrowse/View/Track/HTMLFeatures",
+         "urlTemplate" : "tracks/Araport11_uORFs/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "JBrowse/View/Track/HTMLFeatures",
+         "label" : "Araport11_uORFs",
+         "category" : "Araport Data / Araport11 / Annotation (Jun 2016)",
+         "metadata" : {
+            "URL" : "https://www.araport.org/data/araport11",
+            "Source" : "Araport11 Release (Jun 2016)",
+            "Description" : "Araport11 Upstream ORFs (uORF) features"
+         }
+      },
+      {
+         "style" : {
+            "className" : "feature",
+            "color" : "function (feature, variable, glyph, track) {dicercall = feature.get('Predominant_size'); if(dicercall == 24) { return '#F26F6F'; } else if(dicercall == 23) { return '#1DADAD'; } else if(dicercall == 22) { return '#A2E063'; } else if(dicercall == 21) { return '#9669C9'; } else {return '#EBE53B';} }",
+            "label" : "Predominant_size"
+         },
+         "key" : "Araport11 - small RNA loci",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : "JBrowse/View/Track/CanvasFeatures",
+         "urlTemplate" : "tracks/Araport11_smallRNA/{refseq}/trackData.json",
+         "compress" : 0,
+         "label" : "Araport11_smallRNA",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "category" : "Araport Data / Araport11 / Annotation (Jun 2016)",
+         "metadata" : {
+            "URL" : "https://www.araport.org/data/araport11",
+            "Source" : "Araport11 Release (Jun 2016)",
+            "Description" : "Araport11 small RNA features from root (Hsieh et al., 2009; Breakfield et al., 2012), leaf (Yu et al., 2013), aerial part (Fahlgren et al., 2010), flower (Lister et al., 2008; Cuperus et al., 2010; Law et al., 2013), embryo (Lu et al., 2012), and silique (Hardcastle et al., 2012) (Supporting Table S2), including de novo small RNA clusters identified using ShortStack (Axtell, 2013)"
+         }
       },
       {
          "style" : {
@@ -86,21 +189,20 @@
             "label" : "score"
          },
          "key" : "Aerial",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.aerial/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.aerial",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supporting that junction",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supporting that junction",
             "Tissue" : "Aerial parts"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.aerial"
       },
       {
          "style" : {
@@ -109,21 +211,20 @@
             "label" : "score"
          },
          "key" : "Root",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.root/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.root",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Whole root"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.root"
       },
       {
          "style" : {
@@ -132,21 +233,20 @@
             "label" : "score"
          },
          "key" : "Carpel",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.carpel/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.carpel",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Carpel"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.carpel"
       },
       {
          "style" : {
@@ -155,21 +255,20 @@
             "label" : "score"
          },
          "key" : "Pollen",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.pollen/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.pollen",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Mature, dry pollen"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.pollen"
       },
       {
          "style" : {
@@ -178,21 +277,20 @@
             "label" : "score"
          },
          "key" : "Stage 12 Flower",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.inflorescence/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.flower",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Stage 12 Flower"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.flower"
       },
       {
          "style" : {
@@ -201,21 +299,20 @@
             "label" : "score"
          },
          "key" : "Dark Grown Seedling",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.dark/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.dark",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Dark-grown seedlings"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.dark"
       },
       {
          "style" : {
@@ -224,21 +321,20 @@
             "label" : "score"
          },
          "key" : "Shoot Apical Meristem",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.sam/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.sam",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Shoot Apical Meristem"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.sam"
       },
       {
          "style" : {
@@ -247,21 +343,20 @@
             "label" : "score"
          },
          "key" : "Root Apical Meristem",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.ram/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.ram",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Root Apical Meristem"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.ram"
       },
       {
          "style" : {
@@ -270,21 +365,20 @@
             "label" : "score"
          },
          "key" : "Leaf",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.leaf/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.leaf",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Leaf"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.leaf"
       },
       {
          "style" : {
@@ -293,21 +387,20 @@
             "label" : "score"
          },
          "key" : "Receptacle",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/j.receptacle/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "j.receptacle",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Receptacle"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "j.receptacle"
       },
       {
          "style" : {
@@ -316,21 +409,20 @@
             "label" : "score"
          },
          "key" : "Light Grown Seedling",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/j.light/{refseq}/trackData.json",
          "compress" : 0,
-         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Splice Junctions",
+         "label" : "j.light",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "TopHat-predicted splice junctions. Each glyph spans the intron junction and its label corresponds to the read counts supportiing that junction.",
             "Tissue" : "Light-grown seedlings"
          },
-         "category" : "A. Araport11 / RNA-seq based evidence / Splice Junctions",
-         "label" : "j.light"
+         "type" : "JBrowse/View/Track/CanvasFeatures"
       },
       {
          "style" : {
@@ -342,21 +434,20 @@
             "match_part"
          ],
          "key" : "Aerial",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Aerial.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
-         "label" : "Aerial.assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Aerial parts"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "Aerial.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -369,21 +460,20 @@
             "match_part"
          ],
          "key" : "Carpel",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Carpel.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "Carpel.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Carpel"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "label" : "Carpel.assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -396,21 +486,20 @@
             "match_part"
          ],
          "key" : "Dark Grown Seedling",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Dark_grown_seedling.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "label" : "Dark_grown_seedling.assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Dark-grown seedlings"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "label" : "Dark_grown_seedling.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -423,21 +512,20 @@
             "match_part"
          ],
          "key" : "Stage 12 Flower",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Stage12_flower.assembly/{refseq}/trackData.json",
          "compress" : 0,
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "label" : "Stage12_flower.assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Stage 12 flower"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "label" : "Stage12_flower.assembly",
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -450,21 +538,20 @@
             "match_part"
          ],
          "key" : "Leaf",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Leaf.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "label" : "Leaf.assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Leaf"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "label" : "Leaf.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -477,21 +564,20 @@
             "match_part"
          ],
          "key" : "Light Grown Seedling",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Light_grown_seedling.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "Light_grown_seedling.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Light-grown Seedling"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "label" : "Light_grown_seedling.assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -504,21 +590,20 @@
             "match_part"
          ],
          "key" : "Pollen",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Pollen.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
-         "label" : "Pollen.assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Pollen"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "Pollen.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -531,21 +616,20 @@
             "match_part"
          ],
          "key" : "Root Apical Meristem",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Root_Apical_Meristem.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "Root_Apical_Meristem.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Root Apical Meristem"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "label" : "Root_Apical_Meristem.assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -558,21 +642,20 @@
             "match_part"
          ],
          "key" : "Receptacle",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Receptacle.assembly/{refseq}/trackData.json",
          "compress" : 0,
+         "label" : "Receptacle.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Receptacle"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
-         "label" : "Receptacle.assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -585,21 +668,20 @@
             "match_part"
          ],
          "key" : "Root",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Root.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
-         "label" : "Root.assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Root"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "Root.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -612,257 +694,399 @@
             "match_part"
          ],
          "key" : "Shoot Apical Meristem",
-         "noExport" : true,
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Shoot_Apical_Meristem.assembly/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "Shoot_Apical_Meristem.assembly",
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
-            "Source" : "Araport11",
             "URL" : "https://www.araport.org/data/araport11/methods",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "Araport11",
+            "Description" : "Transcript assemblies generated by PASA, using a combination of de novo and genome guided Trinity assemblies. Minimum contig length of 183 bp and maximum intron length of 2000 bp were applied",
             "Tissue" : "Shoot Apical Meristem"
          },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "category" : "A. Araport11 / RNA-seq based evidence / Transcript Assembly",
+         "label" : "Shoot_Apical_Meristem.assembly",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
          "variance_band" : "true",
-         "key" : "Aerial",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Aerial",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/aerial.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Aerial parts"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "aerial_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Aerial parts"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Shoot Apical Meristem",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Shoot Apical Meristem",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/sam.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Shoot Apical Meristem"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "sam_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Shoot Apical Meristem"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Dark Grown Seedling",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Dark Grown Seedling",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/dark.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Dark-grown seedling"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "dark_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Dark-grown seedling"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Leaf",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Leaf",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/leaf.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Leaf"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "leaf_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Leaf"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Light Grown Seedling",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Light Grown Seedling",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/light.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Light-grown seedling"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "light_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Light-grown seedling"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Pollen",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Pollen",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/pollen.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Pollen"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "pollen_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Pollen"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Root Apical Meristem",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Root Apical Meristem",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/ram.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Root Apical Meristem"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "ram_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Root Apical Meristem"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Receptacle",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Receptacle",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/receptacle.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Receptacle"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "receptacle_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Receptacle"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Root",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Root",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/root.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Root"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "root_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Root"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Stage 12 Flower",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Stage 12 Flower",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/flower12.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Stage 12 Flower"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "flower12_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Stage 12 Flower"
+         }
       },
       {
          "variance_band" : "true",
-         "key" : "Carpel",
          "autoscale" : "local",
-         "noExport" : true,
-         "storeClass" : "JBrowse/Store/BigWig",
+         "key" : "Carpel",
+         "storeClass" : "JBrowse/Store/SeqFeature/BigWig",
          "urlTemplate" : "tracks/Araport11.TopHat.bigwig/carpel.merged.bw",
          "compress" : 0,
-         "metadata" : {
-            "Species" : "Arabidopsis thaliana Col-0",
-            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
-            "Source" : "NCBI SRA",
-            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
-            "Tissue" : "Carpel"
-         },
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
          "label" : "carpel_tophat",
-         "category" : "A. Araport11 / RNA-seq based evidence / Mapping Coverage"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Mapping Coverage",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin and converted to BigWig format",
+            "Tissue" : "Carpel"
+         }
       },
       {
-         "style" : {
-            "className" : "feature",
-            "label" : "id"
-         },
-         "key" : "Araport11 Novel Transcribed Regions",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : "JBrowse/View/Track/CanvasFeatures",
-         "urlTemplate" : "tracks/Araport11.novel.20151015/{refseq}/trackData.json",
-         "compress" : 0,
-         "label" : "Araport11.novel.20151015",
-         "category" : "A. Araport11 / Pre-Release 3 (Dec 2015) / Novel Transcribed Regions",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "key" : "Aerial",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/aerial.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
          "metadata" : {
-             "Species" : "Arabidopsis thaliana Col-0",
-             "Description" : "Novel transcripts assembled from the 113 RNA-seq data sets",
-             "Source" : "Araport11 Pre-Release 3 (Dec 2015)",
-             "URL" : "https://www.araport.org/data/araport11/methods",
-             "Tissue" : "11 tissues used in Araport11"
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Aerial parts"
          },
-         "glyph" : "JBrowse/View/FeatureGlyph/Alignment"
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "aerial_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Shoot Apical Meristem",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/sam.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Shoot Apical Meristem"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "sam_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Dark Grown Seedling",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/dark.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Dark-grown seedling"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "dark_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Leaf",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/leaf.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Leaf"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "leaf_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Light Grown Seedling",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/light.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Light-grown seedling"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "light_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Pollen",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/pollen.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Pollen"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "pollen_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Root Apical Meristem",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/ram.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Root Apical Meristem"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "ram_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Receptacle",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/receptacle.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Receptacle"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "receptacle_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Root",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/root.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Root"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "root_tophat_bam",
+         "chunkSizeLimit" : "12000000"
+      },
+      {
+         "key" : "Stage 12 Flower",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/flower12.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Stage 12 Flower"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "flower12_tophat_bam",
+         "chunkSizeLimit" : 50000000
+      },
+      {
+         "key" : "Carpel",
+         "storeClass" : "JBrowse/Store/SeqFeature/BAM",
+         "urlTemplate" : "tracks/Araport11.TopHat.bam/{refseq}/carpel.merged.REF_{refseq}.bam",
+         "type" : "JBrowse/View/Track/Alignments2",
+         "metadata" : {
+            "URL" : "https://www.araport.org/113-rna-seq-sets-used-araport11",
+            "Species" : "Arabidopsis thaliana Col-0",
+            "Source" : "NCBI SRA",
+            "Description" : "RNA-seq reads from SRA aligned to the TAIR10 genome using TopHat. Alignment BAM files were merged based on tissue/organ of origin",
+            "Tissue" : "Carpel"
+         },
+         "category" : "Araport Data / Araport11 / RNA-seq based evidence / Aligned Reads",
+         "label" : "carpel_tophat_bam",
+         "chunkSizeLimit" : 50000000
       }
    ],
+   "dataset_id" : "Araport11",
    "trackSelector" : {
-       "collapsedCategories" : "A. Araport11/RNA-seq based evidence/Mapping Coverage,A. Araport11/RNA-seq based evidence/Splice Junctions,A. Araport11/RNA-seq based evidence/Transcript Assembly"
-   },
-   "dataset_id" : "Araport11"
+      "collapsedCategories" : "Araport Data/Araport11/RNA-seq based evidence/Mapping Coverage,Araport Data/Araport11/RNA-seq based evidence/Splice Junctions,Araport Data/Araport11/RNA-seq based evidence/Transcript Assembly,Araport Data/Araport11/RNA-seq based evidence/Aligned Reads"
+   }
 }

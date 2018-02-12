@@ -1,23 +1,20 @@
 {
-   "include" : [
-       "functions/fmtDetail.conf"
-   ],
    "tracks" : [
       {
-         "chunkSize" : 20000,
          "storeClass" : "JBrowse/Store/Sequence/StaticChunked",
+         "chunkSize" : 20000,
          "urlTemplate" : "seq/{refseq_dirpath}/{refseq}-",
-         "category" : "B. Assembly",
-         "type" : "SequenceTrack",
-         "label" : "TAIR10_genome",
          "metadata" : {
-            "Description" : "TAIR10 reference genome sequence",
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109",
             "Source" : "TAIR10 (released 11/2010)",
-            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
+            "Description" : "TAIR10 reference genome sequence"
          },
+         "label" : "TAIR10_genome",
+         "type" : "SequenceTrack",
+         "category" : "Araport Data / Assembly",
          "key" : "Genome Reference (TAIR10)"
       },
-     {
+      {
          "style" : {
             "className" : "feature5",
             "arrowheadClass" : "transcript-arrowhead"
@@ -27,14 +24,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assemblies/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "B. Assembly",
-         "type" : "FeatureTrack",
+         "label" : "TAIR9_assemblies",
          "metadata" : {
-            "Description" : "Shows the whole-genome annotation including BAC and other genomic clones.",
-       	    "Source" : "TAIR9 data (released 06/2009)",
-       	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/TAIR9_GFF3_assemblies.gff"
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/TAIR9_GFF3_assemblies.gff",
+            "Source" : "TAIR9 data (released 06/2009)",
+            "Description" : "Shows the whole-genome annotation including BAC and other genomic clones."
          },
-         "label" : "TAIR9_assemblies"
+         "category" : "Araport Data / Assembly",
+         "type" : "FeatureTrack"
       },
       {
          "style" : {
@@ -47,10 +44,10 @@
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
             }
          ],
          "key" : "TAIR10 - Gene Locus",
@@ -58,14 +55,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_loci/{refseq}/trackData.json",
          "compress" : 0,
+         "type" : "FeatureTrack",
+         "category" : "Araport Data / TAIR10",
          "label" : "TAIR10_loci",
          "metadata" : {
-            "Description" : "The total transcribed region of an annotated gene including coding and non-coding genes. The arrow indicates the direction of transcription.",
-       	    "Source" : "TAIR10 (released 11/2010)",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
-         },
-         "category" : "C. TAIR10",
-         "type" : "FeatureTrack"
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109",
+            "Source" : "TAIR10 (released 11/2010)",
+            "Description" : "The total transcribed region of an annotated gene including coding and non-coding genes. The arrow indicates the direction of transcription."
+         }
       },
       {
          "style" : {
@@ -82,20 +79,20 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_Spliced_Junctions_clustered/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "RNA-seq data from Ecker and Mockler labs were aligned to TAIR7 using Tophat and Supersplat. The numbers indicate the supporting read counts for each junction.",
-       	    "Source" : "Ecker and Mockler labs (04/2011)",
-       	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR10/Spliced_Junctions_clustered.gff"
-         },
-         "label" : "TAIR10_Spliced_Junctions_clustered",
+         "category" : "Community Data / Splicing",
          "type" : "FeatureTrack",
-         "category" : "D. Splicing"
+         "metadata" : {
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR10/Spliced_Junctions_clustered.gff",
+            "Source" : "Ecker and Mockler labs (04/2011)",
+            "Description" : "RNA-seq data from Ecker and Mockler labs were aligned to TAIR7 using Tophat and Supersplat. The numbers indicate the supporting read counts for each junction."
+         },
+         "label" : "TAIR10_Spliced_Junctions_clustered"
       },
-     {
+      {
          "style" : {
             "className" : "transcript",
-            "color" : "#66CCFF",
             "connectorThickness" : 2,
+            "color" : "#66CCFF",
             "connectorColor" : "#C2C2C2"
          },
          "key" : "Alternative Splicing Variants (Marquez et al, 2012)",
@@ -103,14 +100,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/Marquez_AlternateSplice/{refseq}/trackData.json",
          "compress" : 0,
+         "metadata" : {
+            "URL" : "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3371709/",
+            "Source" : "Marquez et al., 2012",
+            "Description" : "A normalized cDNA library was generated from pooled seedling and floral tissues and sequenced with paired-end Illumina.The reads were aligned to the TAIR9 reference genome using Bowtie.TopHat was used to detect the splice junctions. Transcriptome survey reveals increased complexity of the alternative splicing landscape."
+         },
+         "category" : "Community Data / Splicing",
          "type" : "FeatureTrack",
          "label" : "Marquez_AlternateSplice",
-         "category" : "D. Splicing",
-         "metadata" : {
-            "Description" : "A normalized cDNA library was generated from pooled seedling and floral tissues and sequenced with paired-end Illumina.The reads were aligned to the TAIR9 reference genome using Bowtie.TopHat was used to detect the splice junctions. Transcriptome survey reveals increased complexity of the alternative splicing landscape.",
-            "Source" : "Marquez et al., 2012",
-            "URL" : "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3371709/"
-         },
          "subfeatures" : 1
       },
       {
@@ -122,62 +119,62 @@
          "trackType" : null,
          "urlTemplate" : "tracks/All_PEAT/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "E. UTR",
+         "type" : "FeatureTrack",
+         "label" : "All_PEAT",
+         "category" : "Community Data / UTR",
          "metadata" : {
-            "Description" : "A large-scale transcription start site (TSS) data set was generated from 10-day-old wild-type root using paired-end analysis of transcription start site (PEAT) protocol, providing TSS locations based on TAIR10 gene annotation. Each PEAT tag cluster (or “peak”) requires a minimum of 10 reads.",
-       	    "Source" : "Morton et al., 2014",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/25035402"
-         },
-         "label" : " All_PEAT",
-         "type" : "FeatureTrack"
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/25035402",
+            "Source" : "Morton et al., 2014",
+            "Description" : "A large-scale transcription start site (TSS) data set was generated from 10-day-old wild-type root using paired-end analysis of transcription start site (PEAT) protocol, providing TSS locations based on TAIR10 gene annotation. Each PEAT tag cluster (or “peak”) requires a minimum of 10 reads."
+         }
       },
       {
          "variance_band" : "true",
-         "autoscale" : "local",
          "key" : "PEAT Coverage, Root (Morton et al. 2014)",
+         "autoscale" : "local",
          "storeClass" : "JBrowse/Store/BigWig",
          "urlTemplate" : "tracks/PEAT_coverage/PEAT_coverage.bw",
          "compress" : 0,
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-         "label" : "PEAT_coverage",
-         "category" : "E. UTR",
          "metadata" : {
-            "Description" : "This track shows the read coverage of raw BAM files and reveals the landscape of transcription initiation in Arabidopsis whole root samples.",
-       	    "Source" : "Morton et al. 2014",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/25035402"
-         }
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/25035402",
+            "Source" : "Morton et al. 2014",
+            "Description" : "This track shows the read coverage of raw BAM files and reveals the landscape of transcription initiation in Arabidopsis whole root samples."
+         },
+         "category" : "Community Data / UTR",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "label" : "PEAT_coverage"
       },
       {
          "variance_band" : "true",
+         "autoscale" : "local",
          "key" : "Direct RNA Sequencing, Forward, Seedling (Duc et al., 2013)",
-         "autoscale" : "local",
          "storeClass" : "JBrowse/Store/BigWig",
-         "max_score": "150",
          "urlTemplate" : "./raw/fwd_wt2_HQ2.bw",
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-         "label" : "UTR_bigwig_fwd_duc",
-         "category" : "E. UTR",
+         "max_score" : "150",
          "metadata" : {
-            "Description" : "This experiment examined the relative 3'UTR positioning and expression in 14-day-old Col-0 seedling samples using Helicos BioSciences Direct RNA Sequencing. This track displays the forward-strand read-depth data from the summed wild-type replicates for this experiment. Each peak indicates the number of reads that end at a given position.",
-       	    "Source" : "Duc et al., 2013",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/24204292"
-         }
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/24204292",
+            "Source" : "Duc et al., 2013",
+            "Description" : "This experiment examined the relative 3'UTR positioning and expression in 14-day-old Col-0 seedling samples using Helicos BioSciences Direct RNA Sequencing. This track displays the forward-strand read-depth data from the summed wild-type replicates for this experiment. Each peak indicates the number of reads that end at a given position."
+         },
+         "category" : "Community Data / UTR",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "label" : "UTR_bigwig_fwd_duc"
       },
       {
          "variance_band" : "true",
-         "key" : "Direct RNA Sequencing, Reverse, Seedling (Duc et al., 2013)",
          "autoscale" : "local",
+         "key" : "Direct RNA Sequencing, Reverse, Seedling (Duc et al., 2013)",
          "storeClass" : "JBrowse/Store/BigWig",
-         "max_score": "150",
-	"urlTemplate" : "./raw/rev_wt2_HQ2.bw",
-         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-         "label" : "UTR_bigwig_rev_duc",
-         "category" : "E. UTR",
+         "urlTemplate" : "./raw/rev_wt2_HQ2.bw",
+         "max_score" : "150",
          "metadata" : {
-            "Description" : "This experiment examined the relative 3'UTR positioning and expression in 14-day-old Col-0 seedling samples using Helicos BioSciences Direct RNA Sequencing. This track displays the forward-strand read-depth data from the summed wild-type replicates for this experiment. Each peak indicates the number of reads that end at a given position.",
-       	    "Source" : "Duc et al., 2013",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/24204292"
-         }
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/24204292",
+            "Source" : "Duc et al., 2013",
+            "Description" : "This experiment examined the relative 3'UTR positioning and expression in 14-day-old Col-0 seedling samples using Helicos BioSciences Direct RNA Sequencing. This track displays the forward-strand read-depth data from the summed wild-type replicates for this experiment. Each peak indicates the number of reads that end at a given position."
+         },
+         "category" : "Community Data / UTR",
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "label" : "UTR_bigwig_rev_duc"
       },
       {
          "displayMode" : "compact",
@@ -195,14 +192,14 @@
          "maxHeight" : 200,
          "urlTemplate" : "tracks/MAKER_EST_FLcDNA_est2genome/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "MAKER_EST_FLcDNA_est2genome",
-         "type" : "CanvasFeatures",
-         "category" : "F. EST and Protein Alignments",
          "metadata" : {
-            "Description" : "Arabidopsis thaliana ESTs and FL-cDNAs downloaded from GenBank and mapped to the genome using MAKER optimized est2genome. Data provided courtesy of Yandell Lab.",
-       	    "Source" : "Yandell lab, Campbell et al. 2014",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/24306534"
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/24306534",
+            "Source" : "Yandell lab, Campbell et al. 2014",
+            "Description" : "Arabidopsis thaliana ESTs and FL-cDNAs downloaded from GenBank and mapped to the genome using MAKER optimized est2genome. Data provided courtesy of Yandell Lab."
          },
+         "category" : "Community Data / EST and Protein Alignments",
+         "type" : "CanvasFeatures",
+         "label" : "MAKER_EST_FLcDNA_est2genome",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -221,14 +218,14 @@
          "maxHeight" : 200,
          "urlTemplate" : "tracks/MAKER_protein2genome/{refseq}/trackData.json",
          "compress" : 0,
-         "label" : "MAKER_protein2genome",
-         "type" : "CanvasFeatures",
-         "category" : "F. EST and Protein Alignments",
          "metadata" : {
-            "Description" : "Non-Arabidopsis Plant protein sequences from SwissProt plant (release 2011_12) were mapped to the genome using MAKER optimized protein2genome. Data provided courtesy of Yandell Lab.",
-       	    "Source" : "Yandell lab, Campbell et al. 2014, SwissProt 201112",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/24306534"
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/24306534",
+            "Source" : "Yandell lab, Campbell et al. 2014, SwissProt 201112",
+            "Description" : "Non-Arabidopsis Plant protein sequences from SwissProt plant (release 2011_12) were mapped to the genome using MAKER optimized protein2genome. Data provided courtesy of Yandell Lab."
          },
+         "category" : "Community Data / EST and Protein Alignments",
+         "type" : "CanvasFeatures",
+         "label" : "MAKER_protein2genome",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -246,14 +243,14 @@
          "trackType" : "JBrowse/View/Track/CanvasFeatures",
          "urlTemplate" : "tracks/Non-Arabidopsis plant protein (SwissProt 2015 Mar)/{refseq}/trackData.json",
          "compress" : 0,
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "metadata" : {
-            "Description" : "Protein sequences from 2123 non-Arabidopsis plant species were downloaded from UniprotKB (SwissProt, 20150304) and mapped to TAIR10 genome using MAKER-P protein2genome pipeline.",
-       	    "Source" : "SwissProt 201503 mapped at JCVI",
-       	    "URL" : "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/taxonomic_divisions/README"
-         },
+         "category" : "Community Data / EST and Protein Alignments",
          "label" : "Non-Arabidopsis plant protein (SwissProt 201503)",
-         "category" : "F. EST and Protein Alignments",
+         "metadata" : {
+            "URL" : "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/taxonomic_divisions/README",
+            "Source" : "SwissProt 201503 mapped at JCVI",
+            "Description" : "Protein sequences from 2123 non-Arabidopsis plant species were downloaded from UniprotKB (SwissProt, 20150304) and mapped to TAIR10 genome using MAKER-P protein2genome pipeline."
+         },
+         "type" : "JBrowse/View/Track/CanvasFeatures",
          "glyph" : "JBrowse/View/FeatureGlyph/Segments"
       },
       {
@@ -262,29 +259,29 @@
             "subfeatureClasses" : {
                "three_prime_UTR" : "transcript-UTR",
                "exon" : "transcript-exon",
-               "CDS" : "transcript-CDS",
-               "five_prime_UTR" : "transcript-UTR"
+               "five_prime_UTR" : "transcript-UTR",
+               "CDS" : "transcript-CDS"
             },
             "Description" : "note,description,computational_description"
          },
          "menuTemplate" : [
             {
-               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Brief Description</strong></td><td>{full_name}</td></tr><tr><td><strong>Symbol</strong></td><td>{symbol}</td></tr><tr><td><strong>Alias</strong></td><td>{alias}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
                "action" : "contentDialog",
-               "label" : "Gene Info: {name}",
-               "title" : "Gene Info: {name}"
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Brief Description</strong></td><td>{full_name}</td></tr><tr><td><strong>Symbol</strong></td><td>{symbol}</td></tr><tr><td><strong>Alias</strong></td><td>{alias}</td></tr><tr><td><strong>Confidence Class (1-10)</strong></td><td>{conf_class}</td></tr><tr><td><strong>Confidence Rating (star)</strong></td><td>{conf_rating}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "title" : "Gene Info: {name}",
+               "label" : "Gene Info: {name}"
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
             },
             {
                "iconClass" : "dijitIconDatabase",
-               "content" : "function(track,feature,div ){ return SequenceViewer(track,feature,div)}",
                "action" : "contentDialog",
+               "content" : "function(track,feature,div ){ return SequenceViewer(track,feature,div)}",
                "label" : "View Sequence"
             }
          ],
@@ -293,14 +290,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_genes/{refseq}/trackData.json",
          "compress" : 0,
-         "category" : "C. TAIR10",
-         "metadata" : {
-            "Description" : "Shows the exon (boxes) and intron (lines) structure of each protein-coding transcript with direction of transcription indicated. The gene model confidence rankings are embedded in this track. Documentation for the ranking system can be found at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>",
-       	    "Source" : "TAIR10 (released 11/2010)",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
-         },
+         "type" : "FeatureTrack",
          "label" : "TAIR10_genes",
-         "type" : "FeatureTrack"
+         "category" : "Araport Data / TAIR10",
+         "metadata" : {
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109",
+            "Source" : "TAIR10 (released 11/2010)",
+            "Description" : "Shows the exon (boxes) and intron (lines) structure of each protein-coding transcript with direction of transcription indicated. The gene model confidence rankings are embedded in this track. Documentation for the ranking system can be found at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>"
+         }
       },
       {
          "style" : {
@@ -313,10 +310,10 @@
          "menuTemplate" : [
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Transposon Report: {name}",
-               "title" : "Thalemine Transposon Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Transposon Report: {name}",
+               "label" : "Thalemine Transposon Report: {name}"
             }
          ],
          "key" : "Natural Transposons (TAIR9)",
@@ -324,14 +321,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_transposons/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "Incorporates TE annotation from TAIR and external sources including TIGR and Colot group.",
-       	    "Source" : "TAIR9 data (released 06/2009)",
-       	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Community_annotation_GFF/tair9_Quesneville_Transposons_20090429.gff"
-         },
-         "label" : "TAIR10_transposons",
+         "category" : "Community Data / Repeat",
          "type" : "FeatureTrack",
-         "category" : "G. Repeat"
+         "metadata" : {
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Community_annotation_GFF/tair9_Quesneville_Transposons_20090429.gff",
+            "Source" : "TAIR9 data (released 06/2009)",
+            "Description" : "Incorporates TE annotation from TAIR and external sources including TIGR and Colot group."
+         },
+         "label" : "TAIR10_transposons"
       },
       {
          "style" : {
@@ -345,14 +342,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_unconfirmed_exons/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "Shows the exons in TAIR10 which are neither supported by experimental evidence nor bioinformatic analysis. The detailed scoring strategy is available at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>",
-            "Source" : "TAIR10 (released 11/2010)",
-            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
-         },
-         "label" : "TAIR10_unconfirmed_exons",
+         "category" : "Araport Data / TAIR10",
          "type" : "FeatureTrack",
-         "category" : "C. TAIR10"
+         "metadata" : {
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109",
+            "Source" : "TAIR10 (released 11/2010)",
+            "Description" : "Shows the exons in TAIR10 which are neither supported by experimental evidence nor bioinformatic analysis. The detailed scoring strategy is available at: <ftp://ftp.arabidopsis.org/home/tair/Genes/TAIR10_genome_release/TAIR10_gene_confidence_ranking/DOCUMENTATION_TAIR_Gene_Confidence.pdf>"
+         },
+         "label" : "TAIR10_unconfirmed_exons"
       },
       {
          "style" : {
@@ -361,31 +358,31 @@
                "pseduogenic_exon" : "exon"
             }
          },
-         "hooks" : {
-            "modify" : "function( track, feature, div ) { dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = 'turquoise'; }); }"
-         },
          "menuTemplate" : [
             {
                "iconClass" : "dijitIconDatabase",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine Gene Report: {name}",
-               "title" : "Thalemine Gene Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine Gene Report: {name}",
+               "label" : "Thalemine Gene Report: {name}"
             }
          ],
-         "key" : "TAIR10 - Pseudogene",
+         "hooks" : {
+            "modify" : "function( track, feature, div ) { dojo.map(div.children, function(child) { if (child.className.match(/subfeature/)) child.style.backgroundColor = 'turquoise'; }); }"
+         },
+         "key" : "TAIR10 - Pseudogenes",
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_pseudogenes/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "Shows the pseudogene transcript.",
-            "Source" : "TAIR10 (released 11/2010)",
-            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
-         },
-         "type" : "FeatureTrack",
+         "category" : "Araport Data / TAIR10",
          "label" : "TAIR10_pseudogenes",
-         "category" : "C. TAIR10"
+         "type" : "FeatureTrack",
+         "metadata" : {
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109",
+            "Source" : "TAIR10 (released 11/2010)",
+            "Description" : "Shows the pseudogene transcript."
+         }
       },
       {
          "style" : {
@@ -396,17 +393,17 @@
          },
          "menuTemplate" : [
             {
-               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
                "action" : "contentDialog",
-               "label" : "ncRNA Info: {name}",
-               "title" : "ncRNA Info: {name}"
+               "content" : "<table border=1><tr><td><strong>Identifier</strong></td><td>{name}</td></tr><tr><td><strong>Name</strong></td><td>{note}</td></tr><tr><td><strong>Computational description</strong></td><td>{computational_description}</td></tr><tr><td><strong>Curatory summary</strong></td><td>{curator_summary}</td></tr></table>",
+               "title" : "ncRNA Info: {name}",
+               "label" : "ncRNA Info: {name}"
             },
             {
                "iconClass" : "dijitLeaf",
-               "url" : "/thalemine/portal.do?externalids={name}",
                "action" : "iframeDialog",
-               "label" : "Thalemine ncRNA Report: {name}",
-               "title" : "Thalemine ncRNA Report: {name}"
+               "url" : "/thalemine/portal.do?externalids={name}",
+               "title" : "Thalemine ncRNA Report: {name}",
+               "label" : "Thalemine ncRNA Report: {name}"
             }
          ],
          "key" : "TAIR10 - Non-Coding RNA",
@@ -414,14 +411,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR10_ncRNAs/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "Shows the non-coding RNA transcripts.",
-            "Source" : "TAIR10 (released 11/2010)",
-            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109"
-         },
-         "label" : "TAIR10_ncRNAs",
+         "category" : "Araport Data / TAIR10",
          "type" : "FeatureTrack",
-         "category" : "C. TAIR10"
+         "metadata" : {
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/22140109",
+            "Source" : "TAIR10 (released 11/2010)",
+            "Description" : "Shows the non-coding RNA transcripts."
+         },
+         "label" : "TAIR10_ncRNAs"
       },
       {
          "style" : {
@@ -435,14 +432,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR_SSRs/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "Regions of tandem repeats including  microsatellite, minisatellite, and satellite, as computed using Tandem Repeats Finder v4.04.",
-            "Source" : "TAIR10 (released 11/2010)",
-       	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR10/TAIR_GFF3_ssrs.gff"
-         },
-         "label" : "TAIR_SSRs",
+         "category" : "Community Data / Repeat",
          "type" : "FeatureTrack",
-         "category" : "G. Repeat"
+         "metadata" : {
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR10/TAIR_GFF3_ssrs.gff",
+            "Source" : "TAIR10 (released 11/2010)",
+            "Description" : "Regions of tandem repeats including  microsatellite, minisatellite, and satellite, as computed using Tandem Repeats Finder v4.04."
+         },
+         "label" : "TAIR_SSRs"
       },
       {
          "style" : {
@@ -456,14 +453,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assembly_gaps/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "Shows the regions where greater than four Ns are included in the current golden path sequence.",
-            "Source" : "TAIR9 data (released 07/2010)",
-            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/tair9_assembly_updates.gff"
-         },
-         "label" : "TAIR9_assembly_gaps",
+         "category" : "Araport Data / Assembly",
          "type" : "FeatureTrack",
-         "category" : "B. Assembly"
+         "metadata" : {
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/tair9_assembly_updates.gff",
+            "Source" : "TAIR9 data (released 07/2010)",
+            "Description" : "Shows the regions where greater than four Ns are included in the current golden path sequence."
+         },
+         "label" : "TAIR9_assembly_gaps"
       },
       {
          "style" : {
@@ -480,14 +477,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_assembly_updates/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "Changes to sequences following TIGR 5 genome release.",
-            "Source" : "TAIR9 data (released 07/2010)",
-            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/tair9_assembly_updates.gff"
-         },
-         "label" : "TAIR9_assembly_updates",
+         "category" : "Araport Data / Assembly",
          "type" : "FeatureTrack",
-         "category" : "B. Assembly"
+         "metadata" : {
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Assembly_GFF/tair9_assembly_updates.gff",
+            "Source" : "TAIR9 data (released 07/2010)",
+            "Description" : "Changes to sequences following TIGR 5 genome release."
+         },
+         "label" : "TAIR9_assembly_updates"
       },
       {
          "style" : {
@@ -499,14 +496,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_Microarray_probes/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "This genome array is based on the initial release of Arabidopsis genome in 2000 and subsequent TIGR reannotation.",
-       	    "Source" : "TAIR9 data (released 06/2009)",
-       	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Expression_GFF/tair9_ATH1-121501.gff"
-         },
-         "label" : "TAIR9_Microarray_probes",
+         "category" : "Community Data / Microarray",
          "type" : "FeatureTrack",
-         "category" : "H. Microarray"
+         "metadata" : {
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Expression_GFF/tair9_ATH1-121501.gff",
+            "Source" : "TAIR9 data (released 06/2009)",
+            "Description" : "This genome array is based on the initial release of Arabidopsis genome in 2000 and subsequent TIGR reannotation."
+         },
+         "label" : "TAIR9_Microarray_probes"
       },
       {
          "style" : {
@@ -523,14 +520,14 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_AtProteome/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "AtProteome assembles proteomic data of and provides information about identified proteotypic peptides, abundances and tissue and organelle-specific appearance.",
-       	    "Source" : "Baerenfaller et al. 2008",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/18436743"
-         },
-         "label" : "TAIR9_AtProteome",
+         "category" : "Community Data / Proteomics",
          "type" : "FeatureTrack",
-         "category" : "I. Proteomics"
+         "metadata" : {
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/18436743",
+            "Source" : "Baerenfaller et al. 2008",
+            "Description" : "AtProteome assembles proteomic data of and provides information about identified proteotypic peptides, abundances and tissue and organelle-specific appearance."
+         },
+         "label" : "TAIR9_AtProteome"
       },
       {
          "style" : {
@@ -547,170 +544,168 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_AtPeptide/{refseq}/trackData.json",
          "compress" : 0,
+         "category" : "Community Data / Proteomics",
+         "type" : "FeatureTrack",
          "label" : "TAIR9_AtPeptide",
          "metadata" : {
-            "Description" : "Proteomics data. Discovery and revision of Arabidopsis genes by proteogenomics Natalie E. Castellana, Samuel H. Payne, Zhouxin Shen, Mario Stanke, Vineet Bafna, and Steven P. Briggs. The white/blue box colour indicates pValue (higher to lower).",
-       	    "Source" : "Castellana et al. 2008",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/19098097"
-         },
-         "type" : "FeatureTrack",
-         "category" : "I. Proteomics"
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/19098097",
+            "Source" : "Castellana et al. 2008",
+            "Description" : "Proteomics data. Discovery and revision of Arabidopsis genes by proteogenomics Natalie E. Castellana, Samuel H. Payne, Zhouxin Shen, Mario Stanke, Vineet Bafna, and Steven P. Briggs. The white/blue box colour indicates pValue (higher to lower)."
+         }
       },
-     {
+      {
          "fmtDetailValue_VE" : "{variantEffect}",
          "style" : {
-            "showLabels" : false,
-            "color" : "function(feature, variable, glyph, track){ return track.variantColor(feature) }"
+            "color" : "function(feature, variable, glyph, track){ return track.variantColor(feature) }",
+            "showLabels" : false
          },
-	 "onClick": {
-               "iconClass" : "dijitLeaf",
-               "content" : "function(track, feature, div){ return track.genotypeTable(track, feature, div) }",
-               "action" : "contentDialog",
-               "label" : "View Variation Features for {name}"
-	 },
          "menuTemplate" : [
-	                 {
-             "label" : "View details"
-			 },
-	                 {
-             "label" : "Zoom to this variation"
-           },
             {
-             "label" : "Highlight this variation"
-           },
+               "label" : "View details"
+            },
+            {
+               "label" : "Zoom to this variation"
+            },
+            {
+               "label" : "Highlight this variation"
+            },
             {
                "iconClass" : "dijitLeaf",
-               "content" : "function(track, feature, div){ return track.genotypeTable(track, feature, div) }",
                "action" : "contentDialog",
+               "content" : "function(track, feature, div){ return track.genotypeTable(track, feature, div) }",
                "label" : "View Variation Features"
             }
          ],
          "key" : "1001 Genomes (Ensembl)",
+         "onClick" : {
+            "iconClass" : "dijitLeaf",
+            "action" : "contentDialog",
+            "content" : "function(track, feature, div){ return track.genotypeTable(track, feature, div) }",
+            "label" : "View Variation Features for {name}"
+         },
          "storeClass" : "JBrowse/Store/SeqFeature/VCFTabix",
          "maxFeatureScreenDensity" : 4,
          "urlTemplate" : "vcf/new_consequences_variation.vcf.gz",
          "fmtDetailField_VE" : "function(fieldname){ return 'Variant Effect' }",
-         "category" : "J. Variation",
-         "metadata" : {
-            "Description" : "Ensembl variants from 1001 Arabidopsis Genomes project. Variant metadata retrieved via Ensembl REST Web Services.",
-       	    "Source" : "Real-time from Ensembl for metadata, static VCF",
-       	    "URL" : "ftp://ftp.ensemblgenomes.org/pub/release-26/plants/vcf/arabidopsis_thaliana"
-         },
+         "type" : "EnsemblVariants/View/Track/CanvasVariants",
          "label" : "Consequences_Variation",
-         "type" : "EnsemblVariants/View/Track/CanvasVariants"
+         "metadata" : {
+            "URL" : "ftp://ftp.ensemblgenomes.org/pub/release-26/plants/vcf/arabidopsis_thaliana",
+            "Source" : "Real-time from Ensembl for metadata, static VCF",
+            "Description" : "Ensembl variants from 1001 Arabidopsis Genomes project. Variant metadata retrieved via Ensembl REST Web Services."
+         },
+         "category" : "Community Data / Variation"
       },
       {
-         "label" : "1001genomes_snp-short-indel_only",
+         "style" : {
+            "color" : "function(feature, variable, glyph, track){ return track.variantColor(feature) }"
+         },
          "key" : "1001 Genomes (1001genomes.org)",
          "storeClass" : "JBrowse/Store/SeqFeature/VCFTabix",
          "urlTemplate" : "tracks/vcf/1001genomes_snp-short-indel_only_ACGTN_v3.1.snpeff.vcf.gz",
-         "category" : "J. Variation",
-         "chunkSizeLimit" : 10000000,
-	 "metadata" : {
-	     "Description" : "1001 Genomes Variants from the 1001genomes.org website. Genotype Accession name resolved against GMI/master_accession_list webservice",
-             "Source" : "VCF from 1001genomes.org",
-	     "URL" : "http://1001genomes.org"
-	 },
-         "type" : "1001GenomesVariants/View/Track/CanvasVariants"
+         "label" : "1001genomes_snp-short-indel_only",
+         "category" : "Community Data / Variation",
+         "type" : "1001GenomesVariants/View/Track/CanvasVariants",
+         "chunkSizeLimit" : 10000000
       },
       {
          "fmtDetailValue_Name" : "{fmtDetailValue_Name}",
+         "displayMode" : "normal",
+         "fmtDetailValue_Comment" : "{Comment}",
+         "key" : "TDNA-seq (O'Malley R et al. 2014)",
+         "histogram" : {
+            "color" : "fuchsia"
+         },
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "metadata" : {
+            "URL" : "http://signal.salk.edu/TDNA-Seq/",
+            "Source" : "O'Malley et al. (released to GenBank Dec 2014)",
+            "Description" : "Annotations for 166,439 insertions identified in 100,013 existing segregating T-DNA insertion lines (from SALK, SAIL, WISC, and GABI-kat collections) using TDNA-seq technology"
+         },
+         "category" : "Community Data / Variation",
+         "fmtDetailValue_Genbank_acc" : "{fmtDetailValue_Genbank_acc}",
          "style" : {
             "color" : "fuchsia",
             "arrowheadClass" : "none"
          },
-         "histogram" : {
-             "color" : "fuchsia"
-         },
-         "key" : "TDNA-seq (O'Malley R et al. 2014)",
-         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-         "trackType" : null,
-         "urlTemplate" : "tracks/SALK_tDNAs/{refseq}/trackData.json",
-         "displayMode": "normal",
-         "compress" : 0,
-         "category" : "J. Variation",
-         "metadata" : {
-            "Description" : "Annotations for 166,439 insertions identified in 100,013 existing segregating T-DNA insertion lines (from SALK, SAIL, WISC, and GABI-kat collections) using TDNA-seq technology",
-       	    "Source" : "O'Malley et al. (released to GenBank Dec 2014)",
-            "URL" : "http://signal.salk.edu/TDNA-Seq/"
-         },
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "glyph" : "JBrowse/View/FeatureGlyph/Box",
-         "label" : "SALK_tDNAs",
-         "fmtDetailField_Length" : "{fmtDetailField_Length}",
-         "fmtDetailField_Id" : "{fmtDetailField_Id}",
-         "fmtDetailValue_Genbank_acc": "{fmtDetailValue_Genbank_acc}",
-             "fmtDetailValue_Comment" : "{Comment}",
-             "menuTemplate" : [
+         "menuTemplate" : [
             {
-             "label" : "View details"
-           },
+               "label" : "View details"
+            },
             {
-             "label" : "Zoom to this transposable_element_insertion_site"
-           },
+               "label" : "Zoom to this transposable_element_insertion_site"
+            },
             {
-             "label" : "Highlight this transposable_element_insertion_site"
-           },
-            {
-               "iconClass" : "dijitLeaf",
-               "label" : "iSect Primer!",
-               "url" : "http://signal.salk.edu/cgi-bin/tdnaexpress?JOB=Primer&LIST={name}",
-               "action" : "iframeDialog",
-               "title" : "iSect Primer"
+               "label" : "Highlight this transposable_element_insertion_site"
             },
             {
                "iconClass" : "dijitLeaf",
-               "label" : "Order from ABRC via TAIR",
-               "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
                "action" : "iframeDialog",
-               "title" : "Check the availability of this T-DNA allele at ABRC"
+               "url" : "http://signal.salk.edu/cgi-bin/tdnaexpress?JOB=Primer&LIST={name}",
+               "title" : "iSect Primer",
+               "label" : "iSect Primer!"
+            },
+            {
+               "iconClass" : "dijitLeaf",
+               "action" : "iframeDialog",
+               "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
+               "title" : "Check the availability of this T-DNA allele at ABRC/NASC via TAIR",
+               "label" : "Order from ABRC/NASC via TAIR"
             }
-         ]
+         ],
+         "fmtDetailField_Id" : "{fmtDetailField_Id}",
+         "trackType" : null,
+         "urlTemplate" : "tracks/SALK_tDNAs/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "label" : "SALK_tDNAs",
+         "fmtDetailField_Length" : "{fmtDetailField_Length}",
+         "glyph" : "JBrowse/View/FeatureGlyph/Box"
       },
       {
+         "fmtDetailValue_Name" : "{fmtDetailValue_Name}",
+         "displayMode" : "normal",
          "style" : {
-            "color": "purple"
+            "color" : "purple"
          },
-         "histogram" : {
-             "color" : "purple"
-         },
+         "menuTemplate" : [
+            {
+               "label" : "View details"
+            },
+            {
+               "label" : "Zoom to this transposable_element_insertion_site"
+            },
+            {
+               "label" : "Highlight this transposable_element_insertion_site"
+            },
+            {
+               "iconClass" : "dijitLeaf",
+               "action" : "iframeDialog",
+               "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
+               "title" : "Check the availability of this T-DNA allele at ABRC/NASC via TAIR",
+               "label" : "Order from ABRC/NASC via TAIR"
+            }
+         ],
          "key" : "TDNA Classical (TAIR9)",
+         "histogram" : {
+            "color" : "purple"
+         },
          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_tDNAs/{refseq}/trackData.json",
          "compress" : 0,
-         "displayMode": "normal",
-         "type" : "JBrowse/View/Track/CanvasFeatures",
-         "glyph" : "JBrowse/View/FeatureGlyph/Box",
-         "category" : "J. Variation",
-         "label" : "TAIR9_tDNAs",
-         "fmtDetailField_Length" : "{fmtDetailField_Length}",
-          "fmtDetailValue_Name" : "{fmtDetailValue_Name}",
          "metadata" : {
-            "Description" : "Shows approximate positions of T-DNA and transposon insertion sites.",
-       	    "Source" : "TAIR9 data (released 06/2010)",
-       	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Variation_GFF/TAIR9_GFF3_tdnas.gff"
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Variation_GFF/TAIR9_GFF3_tdnas.gff",
+            "Source" : "TAIR9 data (released 06/2010)",
+            "Description" : "Shows approximate positions of T-DNA and transposon insertion sites."
          },
-	           "menuTemplate" : [
-        {
-         "label" : "View details"
-       },
-        {
-         "label" : "Zoom to this transposable_element_insertion_site"
-       },
-        {
-         "label" : "Highlight this transposable_element_insertion_site"
-       },
-            {
-               "iconClass" : "dijitLeaf",
-               "label" : "Order from ABRC via TAIR",
-               "url" : "https://www.arabidopsis.org/servlets/TairObject?type=polyallele&name={name}",
-               "action" : "iframeDialog",
-               "title" : "Check the availability of this T-DNA allele at ABRC"
-            }
-         ]
+         "label" : "TAIR9_tDNAs",
+         "category" : "Community Data / Variation",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "fmtDetailField_Length" : "{fmtDetailField_Length}",
+         "glyph" : "JBrowse/View/FeatureGlyph/Box"
       },
-     {
+      {
          "style" : {
             "className" : "diamond-transparent",
             "Description" : "function(feature) { return feature.get('Type'); }"
@@ -723,16 +718,16 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_polymorphisms/{refseq}/trackData.json",
          "compress" : 0,
+         "category" : "Community Data / Variation",
+         "type" : "FeatureTrack",
          "label" : "TAIR9_polymorphisms",
          "metadata" : {
-            "Description" : "Shows the positions of polymorphisms , including SNPs, TILLing mutations, small insertions and deletions.",
-       	    "Source" : "TAIR9 data (released 06/2009)",
-       	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Variation_GFF/TAIR9_GFF3_polymorphisms.gff"
-         },
-         "type" : "FeatureTrack",
-         "category" : "J. Variation"
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Variation_GFF/TAIR9_GFF3_polymorphisms.gff",
+            "Source" : "TAIR9 data (released 06/2009)",
+            "Description" : "Shows the positions of polymorphisms , including SNPs, TILLing mutations, small insertions and deletions."
+         }
       },
-     {
+      {
          "style" : {
             "className" : "generic_part_a"
          },
@@ -741,161 +736,211 @@
          "trackType" : null,
          "urlTemplate" : "tracks/TAIR9_markers/{refseq}/trackData.json",
          "compress" : 0,
-         "metadata" : {
-            "Description" : "Shows the positions of genetic markers.",
-            "Source" : "TAIR9 data (released 06/2009)",
-       	    "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Variation_GFF/TAIR9_GFF3_polymorphisms.gff"
-         },
-         "label" : "TAIR9_markers",
+         "category" : "Community Data / Variation",
          "type" : "FeatureTrack",
-         "category" : "J. Variation"
+         "metadata" : {
+            "URL" : "ftp://ftp.arabidopsis.org/Maps/gbrowse_data/TAIR9/Variation_GFF/TAIR9_GFF3_polymorphisms.gff",
+            "Source" : "TAIR9 data (released 06/2009)",
+            "Description" : "Shows the positions of genetic markers."
+         },
+         "label" : "TAIR9_markers"
       },
       {
-          "style" : {
-              "className" : "feature",
-              "color" : "indigo",
-              "showLabels" : false
-
+         "style" : {
+            "className" : "feature",
+            "showLabels" : false,
+            "color" : "indigo"
+         },
+         "key" : "RNA-binding Protein Protected Sites (Gosai et al., 2015)",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/RBP.protected.sites/{refseq}/trackData.json",
+         "compress" : 0,
+         "metadata" : {
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/25557549",
+            "Source" : "Gosai et al., 2015",
+            "Description" : "RNA-binding protein protected sites (PPS) were detected using protein interaction profile sequencing (PIP-seq) on total nuclei from 10-day-old seedlings. A total of 61,632 PPSs were detected from two-replicate nuclear PIP-seq experiments, 64.7% of which overlap. Consolidation of two replicates yields 40,131 distinct sites which are presented in this track."
+         },
+         "label" : "RBP.protected.sites",
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "category" : "Community Data / Genomic Elements"
+      },
+      {
+         "query" : {
+            "target_run" : 36799,
+            "target_id" : 4336,
+            "vista_base_id" : 611
+         },
+         "style" : {
+            "pos_color" : "{vista_color}",
+            "linkTemplate" : "{vista_browserLink}"
+         },
+         "key" : "Vista Plot: Ahalleri v1 (Phytozome)",
+         "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+         "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+         "trackType" : null,
+         "metadata" : {
+            "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana",
+            "Source" : "Real-time from Phytozome",
+            "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis halleri version v1.0 release"
+         },
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "Community Data / VISTA Plots",
+         "label" : "Vista_Ahalleri"
+      },
+      {
+         "query" : {
+            "target_run" : 660,
+            "target_id" : 962,
+            "vista_base_id" : 611
+         },
+         "style" : {
+            "pos_color" : "{vista_color}",
+            "linkTemplate" : "{vista_browserLink}"
+         },
+         "key" : "Vista Plot: Alyrata v1 (Phytozome)",
+         "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+         "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+         "trackType" : null,
+         "metadata" : {
+            "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana",
+            "Source" : "Real-time from Phytozome",
+            "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis lyrata genome October 2008 release"
+         },
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "Community Data / VISTA Plots",
+         "label" : "Vista_Alyrata"
+      },
+      {
+         "query" : {
+            "target_run" : 36820,
+            "target_id" : 4334,
+            "vista_base_id" : 611
+         },
+         "style" : {
+            "pos_color" : "{vista_color}",
+            "linkTemplate" : "{vista_browserLink}"
+         },
+         "key" : "Vista Plot: BrapaFPsc v1 (Phytozome)",
+         "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+         "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+         "trackType" : null,
+         "metadata" : {
+            "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana",
+            "Source" : "Real-time from Phytozome",
+            "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Brassica rapa FPsc version v1.0 release"
+         },
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "Community Data / VISTA Plots",
+         "label" : "Vista_BrapaFPsc"
+      },
+      {
+         "query" : {
+            "target_run" : 34336,
+            "target_id" : 4333,
+            "vista_base_id" : 611
+         },
+         "style" : {
+            "pos_color" : "{vista_color}",
+            "linkTemplate" : "{vista_browserLink}"
+         },
+         "key" : "Vista Plot: Bstricta v1 (Phytozome)",
+         "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+         "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+         "trackType" : null,
+         "metadata" : {
+            "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana",
+            "Source" : "Real-time from Phytozome",
+            "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Boechera stricta version v1.0 release"
+         },
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "Community Data / VISTA Plots",
+         "label" : "Vista_Bstricta"
+      },
+      {
+         "query" : {
+            "target_run" : 21890,
+            "target_id" : 2005,
+            "vista_base_id" : 611
+         },
+         "style" : {
+            "pos_color" : "{vista_color}",
+            "linkTemplate" : "{vista_browserLink}"
+         },
+         "key" : "Vista Plot: Crubella v1 (Phytozome)",
+         "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
+         "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
+         "trackType" : null,
+         "metadata" : {
+            "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana",
+            "Source" : "Real-time from Phytozome",
+            "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Capsella rubella genome version 1.0 release"
+         },
+         "type" : "JBrowse/View/Track/Wiggle/XYPlot",
+         "category" : "Community Data / VISTA Plots",
+         "label" : "Vista_Crubella"
+      },
+      {
+         "style" : {
+            "className" : "feature"
+         },
+         "key" : "Conserved Non-coding Sequence (CNS, Haudry et al. 2013)",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : null,
+         "urlTemplate" : "tracks/Conserved.Noncoding.Sequence/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "FeatureTrack",
+         "metadata" : {
+            "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/23817568",
+            "Source" : "Haudry et al., 2013",
+            "Description" : "Conservation across orthologous bases suggests that at least 17% of the Arabidopsis thaliana genome is under selection, with nearly one-quarter of the sequence under selection lying outside of coding regions. Much of this sequence can be localized to approximately 90,000 conserved noncoding sequences (CNSs) that show evidence of transcriptional and post-transcriptional regulation."
+         },
+         "category" : "Community Data / Genomic Elements",
+         "label" : "Conserved.Noncoding.Sequence"
+      },
+      {
+         "style" : {
+            "className" : "feature"
+         },
+         "key" : "Upstream ORFs (Bailey-Serres et al., Personal Communication)",
+         "storeClass" : "JBrowse/Store/SeqFeature/NCList",
+         "trackType" : "JBrowse/View/Track/CanvasFeatures",
+         "urlTemplate" : "tracks/uORFs_Bailey-Serres_et_al/{refseq}/trackData.json",
+         "compress" : 0,
+         "type" : "JBrowse/View/Track/CanvasFeatures",
+         "category" : "Community Data / Genomic Elements",
+         "label" : "uORFs-Bailey-Serres_et_al"
+      },
+      {
+          "category": "Community Data / Genomic Elements",
+          "style": {
+              "color": "plum",
+              "description": "function( fObj, varName, gObj, tObj ) { return 'Expressed in ' + fObj.get('expressed_in'); }"
           },
-          "key" : "RNA-binding Protein Protected Sites (Gosai et al., 2015)",
-          "storeClass" : "JBrowse/Store/SeqFeature/NCList",
-          "trackType" : null,
-          "urlTemplate" : "tracks/RBP.protected.sites/{refseq}/trackData.json",
-          "compress" : 0,
+          "storeClass": "Araport/Store/SeqFeature/REST",
+          "baseUrl": "https://api.araport.org/community/v0.3/polly-hsu-lab/small_orfs_to_jbrowse_v0.1",
+          "label": "translated_small_ORFs_Hsu_et_al",
+          "key": "Translated small ORFs (Hsu et al. 2016)",
+          "metadata": {
+              "URL": "http://www.pnas.org/content/113/45/E7126.full",
+              "Source": "Hsu et al. 2016 (PNAS)",
+              "Description": "Super-resolution ribosome profiling reveals unannotated translation events in Arabidopsis"
+          },
           "type": "JBrowse/View/Track/CanvasFeatures",
-          "category" : "K. Binding Site",
-          "label" : "RBP.protected.sites",
-          "metadata" : {
-              "Description" : "RNA-binding protein protected sites (PPS) were detected using protein interaction profile sequencing (PIP-seq) on total nuclei from 10-day-old seedlings. A total of 61,632 PPSs were detected from two-replicate nuclear PIP-seq experiments, 64.7% of which overlap. Consolidation of two replicates yields 40,131 distinct sites which are presented in this track.",
-       	    "Source" : "Gosai et al., 2015",
-       	    "URL" : "http://www.ncbi.nlm.nih.gov/pubmed/25557549"
-
-          }
-      },
-      {
-          "style" : {
-              "pos_color": "{vista_color}",
-              "linkTemplate" : "{vista_browserLink}"
-          },
-          "key" : "Vista Plot:Ahalleri v1 (Phytozome)",
-          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
-          "trackType" : null,
-          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
-          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-          "category" : "L. VISTA Plots",
-          "label" : "Vista_Ahalleri",
-          "metadata" : {
-              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis halleri version v1.0 release",
-              "Source" : "Real-time from Phytozome",
-              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
-          },
-          "query" : {
-              "vista_base_id" : 611,
-              "target_id" : 4336,
-              "target_run" : 36799
-          }
-      },
-      {
-          "style" : {
-              "pos_color": "{vista_color}",
-              "linkTemplate" : "{vista_browserLink}"
-          },
-          "key" : "Vista Plot: Alyrata v1 (Phytozome)",
-          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
-          "trackType" : null,
-          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
-          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-          "category" : "L. VISTA Plots",
-          "label" : "Vista_Alyrata",
-          "metadata" : {
-              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Arabidopsis lyrata genome October 2008 release",
-              "Source" : "Real-time from Phytozome",
-              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
-          },
-          "query" : {
-              "vista_base_id" : 611,
-              "target_id" : 962,
-              "target_run" : 660
-          }
-      },
-      {
-          "style" : {
-              "pos_color": "{vista_color}",
-              "linkTemplate" : "{vista_browserLink}"
-          },
-          "key" : "Vista Plot: BrapaFPsc v1 (Phytozome)",
-          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
-          "trackType" : null,
-          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
-          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-          "category" : "L. VISTA Plots",
-          "label" : "Vista_BrapaFPsc",
-          "metadata" : {
-              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Brassica rapa FPsc version v1.0 release",
-              "Source" : "Real-time from Phytozome",
-              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
-          },
-          "query" : {
-              "vista_base_id" : 611,
-              "target_id" : 4334,
-              "target_run" : 36820
-          }
-      },
-      {
-          "style" : {
-              "pos_color": "{vista_color}",
-              "linkTemplate" : "{vista_browserLink}"
-          },
-          "key" : "Vista Plot: Bstricta v1 (Phytozome)",
-          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
-          "trackType" : null,
-          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
-          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-          "category" : "L. VISTA Plots",
-          "label" : "Vista_Bstricta",
-          "metadata" : {
-              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Boechera stricta version v1.0 release",
-              "Source" : "Real-time from Phytozome",
-              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
-          },
-          "query" : {
-              "vista_base_id" : 611,
-              "target_id" : 4333,
-              "target_run" : 34336
-          }
-      },
-      {
-          "style" : {
-              "pos_color": "{vista_color}",
-              "linkTemplate" : "{vista_browserLink}"
-          },
-          "key" : "Vista Plot: Crubella v1 (Phytozome)",
-          "storeClass" : "Araport/Store/SeqFeature/RESTAuth",
-          "trackType" : null,
-          "baseUrl" : "https://api.araport.org/community/v0.3/phytozome/vista_rest_v0.2/access",
-          "type" : "JBrowse/View/Track/Wiggle/XYPlot",
-          "category" : "L. VISTA Plots",
-          "label" : "Vista_Crubella",
-          "metadata" : {
-              "Description" : "VISTA alignment between Arabidopsis thaliana genome TAIR9 release and Capsella rubella genome version 1.0 release",
-              "Source" : "Real-time from Phytozome",
-              "URL" : "http://phytozome.jgi.doe.gov/jbrowse/index.html?data=genomes%2FAthaliana"
-          },
-          "query" : {
-              "vista_base_id" : 611,
-              "target_id" : 2005,
-              "target_run" : 21890
-          }
+          "glyph": "JBrowse/View/FeatureGlyph/Gene"
       }
    ],
    "names" : {
       "url" : "names/",
       "type" : "Hash"
    },
-   "dataset_id" : "arabidopsis",
+   "include" : [
+      "functions/fmtDetail.conf"
+   ],
    "trackSelector" : {
-      "type" : "Hierarchical",
-      "sortHierarchical": true
+      "sortHierarchical" : true,
+      "type" : "Hierarchical"
    },
+   "dataset_id" : "arabidopsis",
    "formatVersion" : 1
 }

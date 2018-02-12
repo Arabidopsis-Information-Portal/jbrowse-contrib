@@ -407,7 +407,7 @@
     "trackMetadata": {
         "sources": [
             {
-                "url": "arabidopsis/epiccogeMetaData.csv",
+                "url": "{dataRoot}/epiccogeMetaData.csv",
                 "type": "csv"
             }
         ],
@@ -429,5 +429,6 @@
             "Gene Mutant"
         ]
     },
+    "dataRoot" : "arabidopsis",
     "formatVersion": 1
 }
